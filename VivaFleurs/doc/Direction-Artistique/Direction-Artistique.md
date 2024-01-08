@@ -5,7 +5,7 @@
 * **Fond** : Blanc immaculé pour mettre en valeur les fleurs et les arrangements.
 * **Accent** : Utilisation de couleurs douces pour les éléments de navigation(rose pâle, vert clair).
 
-![Alt text](image-2.png)
+![Alt text](image-3.png)
 
 ##Design :
 
