@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+*{
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Diphylleia', serif;
+}
+
+/*NAVBAR*/
+
+/* Style pour la barre de navigation */
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  
+
+  .logo img{
+    max-width: 50px; /* Ajustez la taille du logo */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+
+  }
+  
+  .nav-links a {
+
+    text-decoration: none;
+    color: #586947;
+    font-weight: bold;
+    font-size:larger;
+  }
+  
+
+  /* Style pour la bannière */
+  .banner {
+    background: linear-gradient(to bottom, #95B475, #ffffff); /* Dégradé de couleur */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 200px;
+  }
+  
+  .banner img {
+    position: absolute;
+    margin-top: 70px;
+    top: 0;
+    left: 0;
+    width: 800px; /* Ajustez la taille de l'image */
+
+  }
+  
+  .banner-title {
+    margin-left: auto;
+    color: white;
+    font-size: 50px;
+    font-family: 'Caprasimo', serif;
+}
+
+  
+
+/*FIN NAVBAR*/
+
+
+
+/*CATALOGUE*/
+
+  
+/* Styles de base pour les cartes */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permet à flex items de passer à la ligne */
+    justify-content: space-around;
+    margin: 50px;
+  }
+  
+  .column {
+    position: relative;
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 15px; /* Pour arrondir les bords de la carte */
+  }
+  
+  .card {
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px; /* Pour arrondir les bords de l'image */
+  }
+  
+  .card img {
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    height: 400px;
+    transition: transform 0.5s ease;
+    object-fit: cover; /* Pour ajuster la taille de l'image tout en conservant les proportions */
+  }
+  
+  .card-text {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: rgba(149, 180, 117, 0.8);
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: left 0.5s ease;
+    display: flex;
+
+    flex-direction: column;
+    border-radius: 15px;
+    color: aliceblue;
+  }
+  .card-text h2{
+    text-align: start;
+    font-size: 20px;
+  }
+
+  .card-text p{
+    text-align: start;
+    font-size: 15px;
+  }
+
+
+  /* Animation au survol */
+  .column:hover .card-text {
+    left: 0;
+  }
+  
+  /* Media query pour ajuster la disposition quand l'espace est réduit */
+  @media screen and (max-width: 768px) {
+    .row {
+      flex-direction: column; /* Les cartes seront empilées en colonnes */
+      align-items: center; /* Les cartes seront centrées horizontalement */
+    }
+  }
+
+
+/*FIN CATALOGUE*/
+  
+  
+  
+  
+
+
