@@ -8,14 +8,14 @@
 }
 
 body{
-    font-family: 'Diphylleia', serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 /*NAVBAR*/
 
 /* Style pour la barre de navigation */
 .navbar {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +24,8 @@ body{
 
   
 
-  .logo img{
+  
+  .navbar img{
     max-width: 50px; /* Ajustez la taille du logo */
   }
   
@@ -35,22 +36,38 @@ body{
   
   .nav-links li {
     margin-right: 20px;
+    position: relative;
 
   }
   
   .nav-links a {
 
     text-decoration: none;
-    color: #586947;
-    font-weight: bold;
+    color: #95B475;
     font-size:larger;
+    padding-bottom: 5px;
+    font-weight:bold;
   }
-  
+
+  .nav-links li a::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0%;
+    background-color: #95B475;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+}
+
+
+.nav-links li a:hover::after{
+    width: 100%;
+}
+
 
   /* Style pour la bannière */
   .banner {
-    background: linear-gradient(to bottom, #95B475, #ffffff); /* Dégradé de couleur */
-    display: flex;
+    background-color: #95B475;
     justify-content: space-between;
     align-items: center;
     padding: 200px;
@@ -59,9 +76,9 @@ body{
   .banner img {
     position: absolute;
     margin-top: 70px;
-    top: 0;
-    left: 0;
-    width: 800px; /* Ajustez la taille de l'image */
+    top: 15%;
+    left: 50px;
+    width: 200px; /* Ajustez la taille de l'image */
 
   }
   
@@ -69,7 +86,7 @@ body{
     margin-left: auto;
     color: white;
     font-size: 50px;
-    font-family: 'Caprasimo', serif;
+    text-align: center;
 }
 
   
@@ -115,22 +132,29 @@ body{
     position: absolute;
     top: 0;
     left: -100%;
-    background-color: rgba(149, 180, 117, 0.8);
+    background-color: rgba(255, 255, 255, 0.884);
     width: 100%;
     height: 100%;
     padding-right: 10px;
     padding-left: 10px;
     transition: left 0.5s ease;
     display: flex;
+    padding-top: 5px;
 
     flex-direction: column;
     border-radius: 15px;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
   }
   .card-text h2{
+    padding-top: 10px;
     text-align: start;
     font-size: 20px;
   }
+
+  .card-text h1{
+    padding-top: 10px;
+  }
+
 
   .card-text p{
     text-align: start;
