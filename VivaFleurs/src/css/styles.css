@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+*{
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Diphylleia', serif;
+}
+
+nav ul {
+    display: flex;
+    text-align: center;
+    gap: 40px;
+    margin-left: 75%;
+}
+
+.entreprise-text{
+    margin-top: 5%;
+    margin-left: 65%;
+    font-size: 2.5rem;
+    font-family: 'Caprasimo', serif;
+    color: rgb(82, 163, 82);
+}
