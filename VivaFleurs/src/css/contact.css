@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+*{
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/*NAVBAR*/
+
+/* Style pour la barre de navigation */
+.navbar {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  
+
+  
+  .navbar img{
+    max-width: 50px; /* Ajustez la taille du logo */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+    position: relative;
+
+  }
+  
+  .nav-links a {
+
+    text-decoration: none;
+    color: #95B475;
+    font-size:22px;
+    padding-bottom: 5px;
+    font-weight:bold;
+  }
+
+  .nav-links li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #95B475;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+}
+
+
+.nav-links li a:hover::after{
+    width: 100%;
+}
+
+
+/* Style pour la bannière */
+.banner {
+  background-color: #95B475;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px; /* Ajustez le padding selon vos besoins */
+
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Espacement égal */
+  width: 70%; /* Ajustez la largeur de la zone du texte */
+  margin: auto; /* Centre l'ensemble */
+}
+
+.banner-title h1 {
+  margin: 0;
+  
+  
+}
+
+.banner-title img {
+  width: 200px; /* Ajustez la taille des images */
+  margin: 0 20px; /* Ajustez la marge entre l'image et le texte */
+}
+
+
+
+
+
+
+.contain {
+    background-color: #eee;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    margin: 20px;
+  }
+  
+  .form {
+    background-color: #fff;
+  }
+  
+  .form-input,
+  textarea {
+    max-width: 400px;
+    min-width: none;
+    width: 400px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+  }
+
+  .form-input::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 12px;
+}
+
+  .submit-btn{
+    background: #95B475;
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    border: 0;
+    margin: 10px;
+    transition: 0.5s;
+  }
+  
+  .submit-btn:hover {
+    transform: scale(115%);
+  }
+  
+  .error {
+    color: #ff0000;
+  }
+  
+  .contain {
+    background-color: #eee;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  
+  .wrapper > * {
+    padding: 2em 2em;
+  }
+  
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  
+  .form-headline {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-input {
+    margin-bottom: 1rem;
+    padding: 10px;
+  }
+  
+  .input-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .required-input {
+    color: #ff0000;
+    font-size: large;
+  }
+  
+  .full-width {
+    grid-column: 1 / 3;
+  }
+  
+  .message {
+    margin-bottom: 2rem;
+  }
+  
+  .contacts {
+    color: #212d31;
+    margin-top: 2rem;
+  }
+  
+  .contacts ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contacts li {
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-text {
+    color: #95B475;
+  }
+  
+  .hightlight-contact-info {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.5;
+  }
+  
+  .highlight-text-grey {
+    font-weight: 500;
+  }
+  
+  .email-info {
+    margin-top: 20px;
+  }
