@@ -44,7 +44,7 @@ body{
 
     text-decoration: none;
     color: #95B475;
-    font-size:larger;
+    font-size:22px;
     padding-bottom: 5px;
     font-weight:bold;
   }
@@ -52,7 +52,7 @@ body{
   .nav-links li a::after {
     content: "";
     display: block;
-    height: 1px;
+    height: 2px;
     width: 0%;
     background-color: #95B475;
     position: absolute;
@@ -65,29 +65,38 @@ body{
 }
 
 
-  /* Style pour la bannière */
-  .banner {
-    background-color: #95B475;
-    justify-content: space-between;
-    align-items: center;
-    padding: 200px;
-  }
-  
-  .banner img {
-    position: absolute;
-    margin-top: 70px;
-    top: 15%;
-    left: 50px;
-    width: 200px; /* Ajustez la taille de l'image */
+/* Style pour la bannière */
+.banner {
+  background-color: #95B475;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px; /* Ajustez le padding selon vos besoins */
 
-  }
-  
-  .banner-title {
-    margin-left: auto;
-    color: white;
-    font-size: 50px;
-    text-align: center;
 }
+
+.banner-title {
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Espacement égal */
+  width: 70%; /* Ajustez la largeur de la zone du texte */
+  margin: auto; /* Centre l'ensemble */
+}
+
+.banner-title h1 {
+  margin: 0;
+  
+  
+}
+
+.banner-title img {
+  width: 200px; /* Ajustez la taille des images */
+  margin: 0 20px; /* Ajustez la marge entre l'image et le texte */
+}
+
 
   
 
@@ -113,19 +122,30 @@ body{
     margin: 20px;
     overflow: hidden;
     border-radius: 15px; /* Pour arrondir les bords de la carte */
+    box-shadow: 0px 0px 10px #8a8a8a;
   }
   
   .card {
     overflow: hidden;
     position: relative;
     border-radius: 15px; /* Pour arrondir les bords de l'image */
+    
+
   }
   
   .card img {
     width: 300px; /* Ajustez la largeur selon vos besoins */
-    height: 400px;
+    height: 300px;
     transition: transform 0.5s ease;
     object-fit: cover; /* Pour ajuster la taille de l'image tout en conservant les proportions */
+  }
+
+  .card-text-bas{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px ;
+    text-align: center;
+    margin-top: 25px
+    
   }
   
   .card-text {
@@ -144,6 +164,7 @@ body{
     flex-direction: column;
     border-radius: 15px;
     color: rgb(0, 0, 0);
+    
   }
   .card-text h2{
     padding-top: 10px;
@@ -160,6 +181,9 @@ body{
     text-align: start;
     font-size: 15px;
   }
+
+
+
 
 
   /* Animation au survol */

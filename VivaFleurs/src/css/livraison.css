@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+*{
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*NAVBAR*/
+
+/* Style pour la barre de navigation */
+.navbar {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  
+
+  
+  .navbar img{
+    max-width: 50px; /* Ajustez la taille du logo */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+    position: relative;
+
+  }
+  
+  .nav-links a {
+
+    text-decoration: none;
+    color: #95B475;
+    font-size:22px;
+    padding-bottom: 5px;
+    font-weight:bold;
+  }
+
+  .nav-links li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #95B475;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+}
+
+
+.nav-links li a:hover::after{
+    width: 100%;
+}
+
+
+/* Style pour la bannière */
+.banner {
+  background-color: #95B475;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px; /* Ajustez le padding selon vos besoins */
+
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Espacement égal */
+  width: 70%; /* Ajustez la largeur de la zone du texte */
+  margin: auto; /* Centre l'ensemble */
+}
+
+.banner-title h1 {
+  margin: 0;
+  
+  
+}
+
+.banner-title img {
+  width: 200px; /* Ajustez la taille des images */
+  margin: 0 20px; /* Ajustez la marge entre l'image et le texte */
+}
+
+
+  
+
+/*FIN NAVBAR*/
+
+.cities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.column {
+    margin: 0 20px; /* Espace entre les colonnes */
+}
+  
+.column p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.titre {
+    text-align: center;
+    margin: 20px; /* Pour ajouter un espace en dessous du titre */
+    position: relative;
+}
+
+  
+.titre::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%; /* Ajustez la position de départ de la ligne */
+    transform: translateX(-50%);
+    width: 150px; /* Ajustez la longueur de la ligne ici */
+    border-bottom: 2px solid #95B475; /* Ligne de séparation de couleur noire */
+}
+
+.livraison{
+  text-align: center;
+  margin: 40px;
+
+}
