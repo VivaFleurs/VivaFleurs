@@ -8,20 +8,432 @@
 }
 
 body{
-    font-family: 'Diphylleia', serif;
+  font-family: 'Josefin Sans', sans-serif;}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  
+
+  
+  .navbar img{
+    max-width: 50px; /* Ajustez la taille du logo */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+    position: relative;
+
+  }
+  
+  .nav-links a {
+
+    text-decoration: none;
+    color: whitesmoke;
+    font-size:larger;
+    padding-bottom: 5px;
+    font-weight:bold;
+  }
+
+  .nav-links li a::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0%;
+    background-color: #95B475;
+    position: absolute;
+    transition: all ease-in-out 250ms;
 }
 
-nav ul {
-    display: flex;
-    text-align: center;
-    gap: 40px;
-    margin-left: 75%;
+
+.nav-links li a:hover::after{
+    width: 100%;
 }
 
 .entreprise-text{
-    margin-top: 5%;
-    margin-left: 65%;
+    margin-top: 15%;
+    margin-left: 30%;
     font-size: 2.5rem;
     font-family: 'Caprasimo', serif;
-    color: rgb(82, 163, 82);
+    color: whitesmoke;
+    display: flex;
 }
+
+.entreprise-text img{
+    width: 200px; /* Ajustez la taille des images */
+    margin: 0 40px; /* Ajustez la marge entre l'image et le texte */
+}
+
+
+
+.container-first-page{
+
+    background: linear-gradient(0deg, rgba(235,240,230,1) 0%, rgba(203,225,183,1) 20%, rgba(152,183,121,1) 41%, rgba(149,180,117,1) 100%);
+
+}
+
+
+
+
+/*CATALOGUE*/
+
+.bouquet-du-moment h1{
+color: #95B475;
+margin-top: 1%;
+display: flex;
+justify-content: center;
+}
+/* Styles de base pour les cartes */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permet à flex items de passer à la ligne */
+    justify-content: space-around;
+    margin: 50px;
+  }
+  
+  .column {
+    position: relative;
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 15px; /* Pour arrondir les bords de la carte */
+  }
+  
+  .card {
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px; /* Pour arrondir les bords de l'image */
+  }
+  
+  .card img {
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    height: 400px;
+    transition: transform 0.5s ease;
+    object-fit: cover; /* Pour ajuster la taille de l'image tout en conservant les proportions */
+  }
+  
+  .card-text {
+    position: absolute;
+    top: 0;
+    left: -200%;
+    background-color: rgba(255, 255, 255, 0.884);
+    width: 100%;
+    height: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: left 0.5s ease;
+    display: flex;
+    padding-top: 5px;
+    flex-direction: column;
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+  }
+  .card-text h2{
+    padding-top: 10px;
+    text-align: start;
+    font-size: 20px;
+  }
+
+  .card-text h1{
+    padding-top: 10px;
+  }
+
+
+  .card-text p{
+    text-align: start;
+    font-size: 15px;
+  }
+
+
+  /* Animation au survol */
+  .column:hover .card-text {
+    left: 0;
+  }
+  
+  /* Media query pour ajuster la disposition quand l'espace est réduit */
+  @media screen and (max-width: 768px) {
+    .row {
+      flex-direction: column; /* Les cartes seront empilées en colonnes */
+      align-items: center; /* Les cartes seront centrées horizontalement */
+    }
+  }
+
+
+/*FIN CATALOGUE*/
+
+
+
+
+/*DEBUT DESIGN CARD EQUIPE*/
+
+.square3{
+  height: 100vh;
+}
+
+.square3 h1{
+  color: #95B475;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 900px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  gap: 230px;
+}
+
+.card-wrapper {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  
+}
+
+.card-equipe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 0.5s;
+}
+  .card-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #000;
+    transition: .5s;
+  }
+
+  .card-image img{
+    height: 150%;
+    width: 100%;
+  }
+  
+  .card-image:hover img {
+    opacity: 0.4;
+    transition: .5s;
+  }
+
+
+.card-equipe:hover .card-image {
+  transform: translateY(-100px);
+  transition: all .9s;
+}
+
+/**** Personal Details ****/
+
+.details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #95B475;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  padding: 10px;
+}
+  h2 {
+    margin: 30px 0;
+    padding: 0;
+    text-align: center;
+  }  
+    .job-title {
+        font-size: 1rem;
+        line-height: 2.5rem;
+        color: #333;
+        font-weight: 300;
+    }
+    
+
+
+    /*DEBUT DESIGN FOOTER*/
+
+    footer{
+      height: 80vh;
+      background-color: #95B475;
+      display: flex;
+    }
+    
+.gps{
+  display: block;
+}
+    .gps iframe{
+      position: absolute;
+      margin-top: 2%;
+      margin-right: 1%;
+      height: 40%;
+      width: 30%;
+      right: 0;
+    }
+
+    .gps h1{
+      position: relative;
+      display: flex;
+      right: 0;
+      margin-left: 300%;
+      color: whitesmoke;
+    }
+
+    .nav-links-footer{
+      font-family: 'Josefin Sans', sans-serif; 
+      margin-left: 5%;
+      margin-top: 10%;
+      color: whitesmoke;
+    }
+
+    .nav-links-footer li{
+      margin-top: 15px;
+    }
+
+    .nav-links-footer a{
+      color: whitesmoke;
+    }
+
+    .legal{
+      font-family: 'Josefin Sans', sans-serif;
+      margin-left: 5%;
+      margin-top: 10%;
+    }
+    .legal li{
+      margin-top: 9%;
+    }
+
+    .legal a{
+      color: whitesmoke;
+    }
+
+
+    /*DEBUT DESIGN RESEAUX SOCIAUX*/
+
+    .reseaux-sociaux{
+      margin-left: 19%;
+      margin-bottom: 15%;
+      position: relative;
+    }
+
+    .social-media{
+      display: flex;
+      position:absolute;
+      top:50%;
+      left:50%;
+      -ms-transform:translate(-50%,-50%);
+      -webkit-transform:translate(-50%,-50%);
+      transform:translate(-50%,-50%);
+    }
+    
+    /* Icons */
+    
+    .social-media a {
+      color:#fff;
+      background: gray;
+      border-radius:4px;
+      text-align:center;
+      text-decoration:none;
+      font-family:fontawesome;
+      position: relative;
+      display: inline-block;
+      width:40px;
+      height:28px;
+      padding-top:12px;
+      margin:0 2px;
+      -o-transition:all .5s;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s;
+       -webkit-font-smoothing: antialiased;
+    }
+    
+    .social-media a:hover {
+      background: rgb(49, 238, 11);
+    }
+    
+    /* pop-up text */
+    
+    .social-media a span {
+      color:#666;
+      position:absolute;
+      font-family:sans-serif;
+      bottom:0;
+      left:-25px;
+      right:-25px;
+      padding:5px 7px;
+      z-index:-1;
+      font-size:14px;
+      border-radius:2px;
+      background:#fff;
+      visibility:hidden;
+      opacity:0;
+      -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    /* pop-up text arrow */
+    
+    .social-media a span:before {
+      content:'';
+      width: 0; 
+      height: 0; 
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #fff;
+      position:absolute;
+      bottom:-5px;
+      left:40px;
+    }
+    
+    /* text pops up when icon is in hover state */
+    
+    .social-media a:hover span {
+      bottom:50px;
+      visibility:visible;
+      opacity:1;
+    }
+    
+    /* font awesome icons */
+    
+    .social-media a:nth-of-type(1):before {
+    content:'\f09a';
+    }
+    .social-media a:nth-of-type(2):before {
+    content:'\f099';
+    }
+    .social-media a:nth-of-type(3):before {
+    content:'\f0d5';
+    }
+    .social-media a:nth-of-type(4):before {
+    content:'\f113';
+    }
+    .social-media a:nth-of-type(5):before {
+    content:'\f17d';
+    }
+    .social-media a:nth-of-type(6):before {
+    content:'\f1cb';
+    }
+
+   /*FIN DESIGN RESEAUX SOCIAUX*/
+
+    /*FIN DESIGN FOOTER*/ 
