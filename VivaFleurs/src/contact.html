@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VivaFleurs - Contact</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="img/Viva Fleurs.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="livraison.html">Livraison</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="banner">
+        <div class="banner-title">
+            <img src="./img/fleur-banner-gauche.png" alt="Image Gauche">
+            <h1>VIVA<br>FLEURS</h1>
+            <img src="./img/fleur-banner-droite.png" alt="Image Droite">
+        </div>
+    </div>
+
+    <h2 class="form-headline">Envoyez-nous un message</h2>
+    <div class="contain">
+        <div class="wrapper">
+            <div class="form">
+                <h3>Contactez-nous</h3>
+                <form id="submit-form" action="">
+
+                    <p>
+                        <label for="prenom" class="input-label">Votre nom et prénom <span class="required-input">*</span></label>
+                        <input id="prenom" class="form-input" type="text" placeholder="Nom Prénom" required>
+                        <small class="prenom-error"></small>
+                    </p>
+                    <p>
+                        <label for="email" class="input-label">Votre adresse e-mail <span class="required-input">*</span></label>
+                        <input id="email" class="form-input" type="email" placeholder="Email" required>
+                        <small class="email-error"></small>
+                    </p>
+                    <p>
+                        <label for="tel" class="input-label">Numéro de téléphone</label>
+                        <input id="tel" class="form-input" type="tel" placeholder="Numéro">
+                        <small class="tel-error"></small>
+                    </p>
+                    <p>
+                        <label for="adresse" class="input-label">Votre adresse</label>
+                        <input id="adresse" class="form-input" type="text" placeholder="Adresse">
+                        <small class="adresse-error"></small>
+                    </p>
+                    <p>
+                        <label for="code-postal" class="input-label">Code postal</label>
+                        <input id="code-postal" class="form-input" type="text" placeholder="Code postal">
+                        <small class="code-postal-error"></small>
+                    </p>
+                    <p>
+                        <label for="ville" class="input-label">Ville</label>
+                        <input id="ville" class="form-input" type="text" placeholder="Ville">
+                        <small class="ville-error"></small>
+                    </p>
+                    <p>
+                        <label for="sujet" class="input-label">Sujet <span class="required-input">*</span></label>
+                        <input id="sujet" class="form-input" type="text" placeholder="Sujet" required>
+                        <small class="sujet-error"></small>
+                    </p>
+                    <p class="full-width">
+                        <label for="message" class="input-label">Message <span class="required-input">*</span></label>
+                        <textarea id="message" cols="30" rows="7" placeholder="Votre message" required></textarea>
+                        <small class="message-error"></small>
+                    </p>
+                    <p class="full-width">
+                        <input type="checkbox" id="checkbox" name="checkbox" checked> J'ai lu et j'accepte les conditions générales d'utilisation et la politique de confidentialité du site VivaFleurs.
+                    </p>
+                    <p class="full-width">
+                        <input type="submit" class="submit-btn" value="Envoyer">
+                    </p>
+                </form>
+            </div>
+
+            <div class="contacts contact-wrapper">
+                <ul>
+                    <li>Vous pouvez aussi nous contacter par mail ou directement nous appeler en cas de problème</li>
+                    <span class="hightlight-contact-info">
+                        <li class="email-info"><i class="fa fa-envelope" aria-hidden="true"></i> info@demo.com</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> <span class="highlight-text">02 43 23 25 68</span></li>
+                    </span>
+                </ul>
+            </div>
+        </div>

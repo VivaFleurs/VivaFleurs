@@ -1,5 +1,5 @@
+@import "compass/css3";
 
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 *{
     margin: 0%;
     list-style: none;
@@ -87,13 +87,11 @@ body{
 }
 
 .banner-title h1 {
-  margin: 0;
-  
-  
+  margin: 0;  
 }
 
 .banner-title img {
-  width: 200px; /* Ajustez la taille des images */
+  width: 550px; /* Ajustez la taille des images */
   margin: 0 20px; /* Ajustez la marge entre l'image et le texte */
 }
 
@@ -129,6 +127,7 @@ body{
     overflow: hidden;
     position: relative;
     border-radius: 15px; /* Pour arrondir les bords de l'image */
+    color: black;
     
 
   }
@@ -144,9 +143,12 @@ body{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px ;
     text-align: center;
-    margin-top: 25px
+    margin-top: 25px;
+    opacity: 1;
+    transition: 0.5s;
     
   }
+
   
   .card-text {
     position: absolute;
@@ -183,12 +185,15 @@ body{
   }
 
 
-
-
-
   /* Animation au survol */
   .column:hover .card-text {
     left: 0;
+  }
+
+  .column:hover .card-text-bas {
+    opacity: 0;
+    transition: 0.5s;
+  
   }
   
   /* Media query pour ajuster la disposition quand l'espace est réduit */
