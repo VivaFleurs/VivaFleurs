@@ -97,20 +97,66 @@ body{
 
 
   
-/* Styles de base pour les cartes */
-.row {
-    display: flex;
-    flex-wrap: wrap; /* Permet à flex items de passer à la ligne */
-    justify-content: space-around;
-    margin: 50px;
-  }
+.container{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 70px;
+  display: flex;
+}
+
+
+.col{
+  display: flex;
+  flex-direction: column;
   
-  .column {
-    position: relative;
-    width: 300px; /* Ajustez la largeur selon vos besoins */
-    height: 400px; /* Ajustez la hauteur selon vos besoins */
-    margin: 20px;
-    overflow: hidden;
-    border-radius: 15px; /* Pour arrondir les bords de la carte */
-    box-shadow: 0px 0px 10px #8a8a8a;
-  }
+  margin: 5px;
+  max-width: 800px; /* Adjust the max-width of the text container as needed */
+  width: 100%;
+
+}
+
+.col h3{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.row{
+  display: flex;
+  margin: 5px;
+}
+
+.border {
+  display: inline-block; 
+  width: 100%;
+  background: #b6b6b6; 
+  height: 1px;
+  margin-top: 5px;
+}
+
+.images {
+  display: flex;
+  justify-content:center;
+  margin-top: 20px; /* Adjust as needed */
+  width: 100%;
+}
+
+.images img{
+  margin: 10px;
+  width: 15%;
+  border-radius: 5px;
+
+}
+
+.images img:hover{
+  border: solid 1px;
+  color: #95B475;
+  
+}
+
+.image-princ{
+  margin-left: auto;
+  margin-right:auto ;
+  width: 200%;
+  max-width: 600px;
+  border-radius: 5px;
+}
