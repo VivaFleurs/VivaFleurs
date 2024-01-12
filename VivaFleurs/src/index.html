@@ -6,10 +6,10 @@
     <title>VivaFleurs</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-xyz" crossorigin="anonymous" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css'>    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
-    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/main.js" defer></script>
 </head>
 <body>
@@ -28,15 +28,15 @@
     </header>
   
     <section class="welcome-display">
+        
       <div class="entreprise-text">
-        <img src="https://media.canva.com/1/image-resize/1/774_800_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS91Z0ZqRS9NQUY1ZV91Z0ZqRS8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAPYDHry0wkvgEt08uOP4Fey7CGJz0Dfz3pbwd2LkhS5m&exp=1704900232&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAAA8C4NdsjJlQhbGdU8DJ-X0rT1ux8DzgfPyOUfs2DQNC" alt="Image Gauche">
+        <img src="img/pngwing.com.png" alt="imagedroite">
         <h1>VIVA<br>FLEURS</h1>
-        <img src="https://media.canva.com/1/image-resize/1/774_800_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS91Z0ZqRS9NQUY1ZV91Z0ZqRS8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAPYDHry0wkvgEt08uOP4Fey7CGJz0Dfz3pbwd2LkhS5m&exp=1704900232&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAAA8C4NdsjJlQhbGdU8DJ-X0rT1ux8DzgfPyOUfs2DQNC" alt="Image Droite">
+      </div>
     </section>
-  </div>
 
-  <section>
-    <div class="bouquet-du-moment">
+  <section >
+    <div class="bouquet-du-moment" data-aos="fade-right" data-aos-duration="1500">
       <h1>Nos bouquets du moment</h1>
       <div class="row">
         
@@ -142,7 +142,7 @@
     </div>
   </section>
  
-  <section class="square3">
+  <section class="square3" data-aos="fade-up" data-aos-duration="1500">
     <h1>L'équipe</h1>
     <div class="container">
     
@@ -197,44 +197,55 @@
              </div>
         </div>
 
-
+        
       </div><!-- end box wrapper --> 
         
+      <div class="text-equipe">
+        <p>Toute l'équipe de Viva Fleurs sera ravie de vous accueillir et vous faire profiter de son expertise. </p>
+      </div>
   </section>
 
 
   <footer>
-    <div class="nav-links-footer">
-        <ul>
-            <li><a href="#">accueil</a></li>
-            <li><a href="catalogue.html">Catalogue</a></li>            
-            <li><a href="#">Livraison</a></li>  
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">A propos de nous</a></li>         
-        </ul>
-    </div>
+            <div class="nav-links-footer">
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>            
+                    <li><a href="#">Livraison</a></li>  
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">L'entreprise</a></li>         
+                </ul>
+            </div>
 
     <div class="legal">
         <li><a href="#">Politique de confidentialité</a></li>
-        <li><a href="#">mention légal</a></li>
+        <li><a href="#">Mention légal</a></li>
     </div>
 
-    <div class="reseaux-sociaux">
-        <div class="social-media">
-            <a href="#"><span><i class="fab fa-facebook"></i> Facebook</span></a>
-            <a href="#"><span><i class="fab fa-twitter"></i> Twitter</span></a>
-            <a href="#"><span><i class="fab fa-google-plus"></i> Google+</span></a>
-            <a href="#"><span><i class="fab fa-github"></i> Github</span></a>
-            <a href="#"><span><i class="fab fa-dribbble"></i> Dribbble</span></a>
-            <a href="#"><span><i class="fab fa-codepen"></i> CodePen</span></a>
+        <div class="reseaux-sociaux">
+            <div class="social-media">
+                <a href="#"><i class="fi fi-brands-instagram"></i><span>Instagram</span> </a>
+                <a href="#"><i class="fi fi-brands-facebook"></i></i><span>Facebook</span></a>
+                <a href="#"><i class="fi fi-brands-linkedin"></i><span>Linkedin</span> </a>
+                <a href="#"><i class="fi fi-brands-google"></i><span>Google</span> </a>
+            </div>
         </div>
-    </div>
+    
 
-    <div class="gps">
-        <h1>Nous retrouvez</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10677.50156196755!2d0.19136496832242988!3d48.00645699399204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28f2955441973%3A0x9acec2fa3df254c5!2sViva%20Fleurs!5e0!3m2!1sfr!2sfr!4v1704968614948!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+        <div class="gps-container">
+            <h1>Nous retrouver</h1>
+            <div class="gps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10677.50156196755!2d0.19136496832242988!3d48.00645699399204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28f2955441973%3A0x9acec2fa3df254c5!2sViva%20Fleurs!5e0!3m2!1sfr!2sfr!4v1704968614948!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
   </footer>
+
+
+
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 </html>
