@@ -86,16 +86,13 @@ body{
 }
 
 .banner-title h1 {
-  margin: 0;
-  
-  
+  margin: 0;  
 }
 
 .banner-title img {
-  width: 200px; /* Ajustez la taille des images */
+  width: 550px; /* Ajustez la taille des images */
   margin: 0 20px; /* Ajustez la marge entre l'image et le texte */
 }
-
 
 
 
