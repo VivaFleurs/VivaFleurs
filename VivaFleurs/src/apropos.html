@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/apropos.css">
+    <script src="./js/main.js" defer></script>
+    <title>VivaFleurs - A propos de nous</title>
+</head>
+<body>
+    
+    <div class="container-first-page" style="height: 100vh;">
+        <header>
+          <nav class="navbar">
+            <img src="img/Viva Fleurs.png" alt="Logo">
+            <ul class="nav-links">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="catalogue.html">Catalogue</a></li>
+              <li><a href="livraison.html">Livraison</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+      
+        <section class="welcome-display">
+            <div class="image-banner">
+                <img src="img/cercle fleurs.png" alt="imagedroite">
+                <div class="entreprise-text">
+                    <h1>VIVA<br>FLEURS</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="historique-part">
+      <div class="historique">
+        <h1>Historique</h1>
+        
+        <div class="historique-text">
+          <h2>Notre création</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, modi eum totam fuga consectetur autem amet vero quis illo! Blanditiis non beatae accusamus rerum quam quaerat ex enim cum. Provident.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-section">
+      <h2 class="line-title">trending games</h2>
+      <div class="owl-carousel custom-carousel owl-theme">
+        <div class="item active" style="background-image: url(./img/vivafleurs1.webp);">
+          <div class="item-desc">
+            <h3>Dota 2</h3>
+            <p>Dota 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+              Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+          </div>
+        </div>
+
+        <div class="item" style="background-image: url(./img/vivafleurs2.webp);">
+          <div class="item-desc">
+            <h3>The Witcher 3</h3>
+            <p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense
+              of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+          </div>
+        </div>
+
+        <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
+          <div class="item-desc">
+            <h3>RDR 2</h3>
+            <p>RDR 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+              Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+          </div>
+        </div>
+
+        <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
+          <div class="item-desc">
+            <h3>PUBG Mobile</h3>
+            <p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+              Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+          </div>
+        </div>
+
+      </div>
+      
+    </section>
+
+<script>
+  $(".custom-carousel").owlCarousel({
+      autoWidth: true,
+      loop: true
+    });
+
+    $(document).ready(function () {
+      $(".custom-carousel .item").click(function () {
+        $(".custom-carousel .item").not($(this)).removeClass("active");
+        $(this).toggleClass("active");
+      });
+    });
+    
+</script>
+   
+</body>
+</html>
