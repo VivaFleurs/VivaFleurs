@@ -146,7 +146,6 @@ body{
     margin-top: 25px;
     opacity: 1;
     transition: 0.5s;
-    
   }
 
   
@@ -171,7 +170,7 @@ body{
   .card-text h2{
     padding-top: 10px;
     text-align: start;
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .card-text h1{
@@ -181,7 +180,7 @@ body{
 
   .card-text p{
     text-align: start;
-    font-size: 15px;
+    font-size: 20px;
   }
 
 
