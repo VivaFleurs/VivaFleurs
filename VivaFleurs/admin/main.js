@@ -46,7 +46,7 @@ getProduit().then(data => {
 
 async function getProduit() {
     try {
-      const response = await fetch('http://192.168.1.48/BDD.php');
+      const response = await fetch('http://localhost/BDD.php');
       const data = await response.json();
       
       // Traiter les données reçues
@@ -57,4 +57,38 @@ async function getProduit() {
       console.error('Erreur lors de la récupération des données', error);
       throw error; // Pour propager l'erreur à l'appelant, si nécessaire
     }
+}
+
+
+// Creation formulaire au clic sur d'ajout
+
+function openPopup() {
+  document.getElementById('popup-container').style.display = 'block';
+  document.getElementById('popup-overlay').style.display = 'block';
+  document.getElementById('ajout').addEventListener("submit", (e) => {
+  console.log('1');
+    const photo1 = e.target.files[0];
+    if (photo1) {
+      console.log('2');
+
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        console.log('3');
+          const imageData = e.target.result;
+      };
+      console.log('4');
+
+      reader.readAsDataURL(photo1);
+  }
+  console.log('5');
+  
+    const photo2 = e.target.files[1];
+    const photo3 = e.target.files[2];   
+  })
+}
+
+function closePopup() {
+  document.getElementById('popup-container').style.display = 'none';
+  document.getElementById('popup-overlay').style.display = 'none';
 }
