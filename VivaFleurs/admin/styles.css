@@ -102,7 +102,7 @@ body{
 
 
 
-/*CATALOGUE*/
+/*ADMIN*/
 
   
 /* Styles de base pour les cartes */
@@ -113,7 +113,7 @@ body{
     margin: 50px;
   }
   
-  .column {
+.column {
     position: relative;
     width: 300px; /* Ajustez la largeur selon vos besoins */
     height: 400px; /* Ajustez la hauteur selon vos besoins */
@@ -121,78 +121,35 @@ body{
     overflow: hidden;
     border-radius: 15px; /* Pour arrondir les bords de la carte */
     box-shadow: 0px 0px 10px #8a8a8a;
-  }
+}
   
-  .card {
-    overflow: hidden;
-    position: relative;
-    border-radius: 15px; /* Pour arrondir les bords de l'image */
-    color: black;
-    
-
-  }
-  
-  .card img {
-    width: 300px; /* Ajustez la largeur selon vos besoins */
-    height: 300px;
-    transition: transform 0.5s ease;
-    object-fit: cover; /* Pour ajuster la taille de l'image tout en conservant les proportions */
-  }
-
-  .card-text-bas{
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px ;
-    text-align: center;
-    margin-top: 25px;
-    opacity: 1;
-    transition: 0.5s;
-  }
-
-  
-  .card-text {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    background-color: rgba(255, 255, 255, 0.884);
+  /* Style du tableau */
+table {
     width: 100%;
-    height: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
-    transition: left 0.5s ease;
-    display: flex;
-    padding-top: 5px;
-
-    flex-direction: column;
-    border-radius: 15px;
-    color: rgb(0, 0, 0);
-    
-  }
-  .card-text h2{
-    padding-top: 10px;
-    text-align: start;
-    font-size: 25px;
-  }
-
-  .card-text h1{
-    padding-top: 10px;
-  }
-
-
-  .card-text p{
-    text-align: start;
-    font-size: 20px;
-  }
-
-
-  /* Animation au survol */
-  .column:hover .card-text {
-    left: 0;
-  }
-
-  .column:hover .card-text-bas {
-    opacity: 0;
-    transition: 0.5s;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
   
+  /* Style de l'en-tête du tableau */
+thead {
+    background-color: #f2f2f2;
+}
+  
+  /* Style des cellules du tableau */
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+  /* Style des lignes alternées du tableau */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+  /* Style du tableau au survol de la souris */
+  tbody tr:hover {
+    background-color: #e6e6e6;
   }
   
   /* Media query pour ajuster la disposition quand l'espace est réduit */
@@ -204,7 +161,7 @@ body{
   }
 
 
-/*FIN CATALOGUE*/
+/*FIN ADMIN*/
   
   
 
