@@ -44,16 +44,16 @@
 <div id="popup-container">
   <div id="close-popup" onclick="closePopup()">X</div>
   <h2>Modification de la base de donnée</h2>
-  <form  id="ajout"  method="post">
+  <form  id="ajout" method="post" enctype="multipart/form-data">
 
     <label for="file">photo 1</label>
-    <input type="file" id="file" name="file" accept=".png " required>
+    <input type="file" accept=".png" required>
     
     <label for="file">photo 2</label>
-    <input type="file" id="file" name="file" accept=".png " required>
+    <input type="file" accept=".png" required>
 
     <label for="file">photo 3</label>
-    <input type="file" id="file" name="file" accept=".png " required>
+    <input type="file" accept=".png" required>
 
     <label for="name">Nom</label>
     <input type="text" id="nom" name="nom" required>

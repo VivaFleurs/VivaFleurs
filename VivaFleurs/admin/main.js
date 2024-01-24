@@ -61,31 +61,49 @@ async function getProduit() {
 
 
 // Creation formulaire au clic sur d'ajout
+document.getElementById('ajout').addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = document.getElementById('ajout');
+  const formData = new FormData(form);
+
+  // Ajoutez d'autres données au besoin (par exemple, texte, nombres, etc.)
+  formData.append('autreChamp', 'valeur');
+
+  // Ajoutez toutes les images au FormData
+  const fileInputs = form.querySelectorAll('input[type="file"]');
+  fileInputs.forEach((fileInput, index) => {
+    const files = fileInput.files;
+
+    if (files && files.length > 0) {
+      formData.append(`image${index + 1}`, files[0]);
+    }
+  });
+
+  // Effectuez une requête AJAX pour envoyer les fichiers au serveur
+  try {
+    const response = await fetch('http://127.0.0.1:5500/VivaFleurs/VivaFleurs/image/Image-shooting/', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      console.log('Envoi réussi !');
+    } else {
+      console.error('Erreur lors de l\'envoi :', response.statusText);
+    }
+  } catch (error) {
+    console.error('Erreur réseau lors de l\'envoi.', error);
+  }
+});
+
+
+
+
 
 function openPopup() {
   document.getElementById('popup-container').style.display = 'block';
   document.getElementById('popup-overlay').style.display = 'block';
-  document.getElementById('ajout').addEventListener("submit", (e) => {
-  console.log('1');
-    const photo1 = e.target.files[0];
-    if (photo1) {
-      console.log('2');
-
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        console.log('3');
-          const imageData = e.target.result;
-      };
-      console.log('4');
-
-      reader.readAsDataURL(photo1);
-  }
-  console.log('5');
-  
-    const photo2 = e.target.files[1];
-    const photo3 = e.target.files[2];   
-  })
 }
 
 function closePopup() {
