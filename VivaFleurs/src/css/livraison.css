@@ -94,6 +94,27 @@ body{
   margin: 0 20px; /* Ajustez la marge entre l'image et le texte */
 }
 
+/*design svg livraison*/
+
+.symbole-livraison {
+  margin-top: 3%;
+  display: flex;
+  margin-left: 40%;
+}
+
+.symbole-livraison div {
+  display: flex;
+  align-items: center; /* Alignement vertical au centre */
+  margin-right: 10px; /* Espacement entre les éléments, ajustez selon vos besoins */
+}
+
+.symbole-livraison img {
+  width: 100px; /* Remplacez la valeur par la largeur souhaitée */
+  height: 100px; /* Remplacez la valeur par la hauteur souhaitée */
+  margin-right: 15px; /* Espacement entre l'image et la flèche, ajustez selon vos besoins */
+}
+
+/*FIN design svg livraison*/
 
   
 
