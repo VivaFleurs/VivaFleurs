@@ -12,11 +12,13 @@ body{
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-  }
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
 
   .navbar img{
     max-width: 50px; /* Ajustez la taille du logo */
@@ -34,14 +36,12 @@ body{
   }
   
   .nav-links a {
-
     text-decoration: none;
-    color: whitesmoke;
+    color: #95B475;
     font-size:larger;
     padding-bottom: 5px;
     font-weight:bold;
   }
-
   .nav-links li a::after {
     content: "";
     display: block;

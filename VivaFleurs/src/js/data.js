@@ -2,7 +2,7 @@
 
 async function getProduit() {
     try {
-      const response = await fetch('http://192.168.1.48/BDD.php');
+      const response = await fetch('http://localhost/BDD.php');
       const data = await response.json();
       
       // Traiter les données reçues
