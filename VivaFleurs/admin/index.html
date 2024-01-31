@@ -30,7 +30,51 @@
             <h1>ADMIN</h1>
         </div>
     </div>
+
+
+
+    <div class="barre-ajout">
+        <ul>
+            <button onclick="openPopup()">Ajout</button>
+        </ul>
+    </div>
     
+<div id="popup-overlay"></div>
+
+<div id="popup-container">
+  <div id="close-popup" onclick="closePopup()">X</div>
+  <h2>Modification de la base de donnée</h2>
+  <form  id="ajout" method="post" enctype="multipart/form-data">
+
+    <label for="file">photo 1</label>
+    <input type="file" accept=".png" required>
+    
+    <label for="file">photo 2</label>
+    <input type="file" accept=".png" required>
+
+    <label for="file">photo 3</label>
+    <input type="file" accept=".png" required>
+
+    <label for="name">Nom</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="message">Description image</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <label for="message">Composition</label>
+    <textarea id="composition" name="composition" rows="4" required></textarea>
+
+    <label for="email">Prix</label>
+    <input type="text" id="email" name="email" required>
+
+    <label for="message">Entretient</label>
+    <input type="entretient" id="entretient" name="entretient" rows="4" required>
+    
+
+    <input class="envoyer" type="submit" value="Envoyer">
+
+  </form>
+</div>
 
     <div class="row"><img id="gif" src="../src/img/Loading.gif" alt="Loading"></div>
     <div id="container" class="row"></div>   

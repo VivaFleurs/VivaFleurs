@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="./css/apropos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" class="rel">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/main.js" defer></script>
     <title>VivaFleurs - A propos de nous</title>
 </head>
 <body>
     
     <div class="container-first-page" style="height: 100vh;">
+
         <header>
           <nav class="navbar">
             <img src="img/Viva Fleurs.png" alt="Logo">
@@ -25,16 +28,19 @@
         </header>
       
         <section class="welcome-display">
+
             <div class="image-banner">
                 <img src="img/cercle fleurs.png" alt="imagedroite">
                 <div class="entreprise-text">
                     <h1>VIVA<br>FLEURS</h1>
                 </div>
             </div>
+
         </section>
+
     </div>
 
-    <section class="historique-part">
+    <section class="historique-part" data-aos="fade-right" data-aos-duration="1500">
       <div class="historique">
         <h1>Historique</h1>
         
@@ -45,50 +51,53 @@
       </div>
     </section>
 
-    <section >
+    <section>
       <div class="nos-magasins" data-aos="fade-right" data-aos-duration="1500">
         <h1>Nos magasins</h1>
         <div class="row">
           
           <div class="column" >
               <div class="card">
-                  <img src="./img/vivafleurs1.webp" alt="">
+                  <a href="https://maps.app.goo.gl/M21SfH8oPgVuyGAz6">
+                    <img src="./img/vivafleurs1.webp" alt="">
+                  </a>
               </div>
               <div class="card-text">
-                  <h1>2 impasse fefaf</h1>
-                  
-                
+                  <h1>89 Rue nationale, 72100 Le Mans</h1>
               </div>
           </div>
           <div class="column" >
+
               <div class="card">
-                  <img src="./img/vivafleurs1.webp" alt="">
-                  
+                <a href="">
+                    <img src="./img/vivafleurs3.png" alt="">
+                </a>
+              </div>
+
+              <div class="card-text">
+                  <h1>215 Rue des Maillets, 72000 Le Mans</h1>
+              </div>
+          </div>
+
+          <div class="column">
+              <div class="card">
+                <a href="">
+                    <img src="./img/vivafleurs2.webp" alt="">
+                </a>
               </div>
               <div class="card-text">
-                  <h1>2 impasse fefaf</h1>
-                 
-               
+                  <h1>59 Av. Louis Cordelet, 72000 Le Mans</h1>
               </div>
           </div>
 
           <div class="column" >
               <div class="card">
-                  <img src="./img/vivafleurs2.webp" alt="">
+                <a href="">
+                    <img src="./img/vivafleurs1.webp" alt="">
+                </a>
               </div>
               <div class="card-text">
-                  <h1>2 impasse fefaf</h1>
-              </div>
-          </div>
-
-          <div class="column" >
-              <div class="card">
-                  <img src="./img/vivafleurs1.webp" alt="">
-              </div>
-              <div class="card-text">
-                  <h1>2 impasse fefaf</h1>
-                 
-                  
+                  <h1>3 Pl. George Washington, 72000 Le Mans</h1>            
               </div>
           </div>
          
@@ -96,11 +105,18 @@
       </div>
     </section>
 
+    <section>
+        <div class="notre-objectif" data-aos="fade-right" data-aos-duration="1500">
+            <h1>Notre objectif</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate cumque modi nostrum cum libero. Et, nesciunt ratione nostrum hic quia facere dicta vel, debitis commodi assumenda, culpa sapiente aperiam. Provident?</p>
+        </div>
+    </section>
+
    
   <footer class="foot-col">
     <div class="foot-main">
         <div class="foot-row">
-            <h4>Liens de redirection</h4>
+            <h4>Nos pages</h4>
             <ul>
                 <li><a href="#">Accueil</a></li>
                 <li><a href="catalogue.html">Catalogue</a></li>            
@@ -128,8 +144,6 @@
                 <a href="https://www.instagram.com/esportline_asso/"><li><i class="fab fa-instagram"></i></li></a>
                 <a href="https://x.com/eSport_Line_?s=20"><li><i class="fab fa-twitter"></i></li></a>
                 <a href="mailto:esportline.asso@gmail.com"><li><i class="fab fa-google-plus-g"></i></li></a>
-
-                
             </ul>
             </div>
         </div>
@@ -145,5 +159,11 @@
 
     </div>
 </footer> 
+
+
+    <script>
+    AOS.init();
+    </script>
+
 </body>
 </html>
