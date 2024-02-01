@@ -173,6 +173,11 @@ h3 {
   transform: rotate(90deg); /* Initial rotation angle */
 }
 
+.rotate::after {
+  transform: rotate(-90deg); /* Initial rotation angle */
+}
+
+
 
 
 

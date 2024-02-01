@@ -112,13 +112,21 @@ if (currentURL.includes("bouquet.html")) {
           <h3 id="service-title">1. Qu'est-ce que votre service propose exactement?</h3>
           <span class="rotate" id="arrow"></span>
         </div>
-        <p id="service-description>Notre service offre une gamme complète de solutions dans le domaine [insérer le domaine]. Nous nous engageons à fournir [expliquer brièvement la mission].
+        <p id="service-description">Notre service offre une gamme complète de solutions dans le domaine [insérer le domaine]. Nous nous engageons à fournir [expliquer brièvement la mission].
         </p>
 
       </div>`
 
       document.getElementById('arrow').addEventListener("click",()=>{
-        document.getElementById('service-description').style.display='flex'
+        if(document.getElementById('service-description').style.display==='none')
+        {
+          document.getElementById('service-description').style.display='flex'
+          document.getElementById('arrow').style.transform='rotate(-90deg)'
+        }
+       else {
+        document.getElementById('service-description').style.display='none'
+          document.getElementById('arrow').style.transform='rotate(90deg)'
+       }
       })
     }
     )
