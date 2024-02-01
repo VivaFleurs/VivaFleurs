@@ -134,9 +134,18 @@ body{
 
 h3 {
   color: #333;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
   margin-bottom: 10px;
+  position: relative; 
+}
+
+h2::after {
+  content: "\276f"; 
+  transform: translateY(-50%);
+  margin-left: 10px; 
+  font-size: 20px; 
+  color: black; 
 }
 
 /* FIN CATEGORIE BOUTON DESIGN */

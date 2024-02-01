@@ -102,5 +102,11 @@ if (currentURL.includes("bouquet.html")) {
     });
 
 
+    if(currentURL.includes("faq.html")){
+      document.getElementById('livraison').addEventListener("click",()=>{
+        
+      }
+      )
+    }
 
   }
