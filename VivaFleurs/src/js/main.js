@@ -100,13 +100,28 @@ if (currentURL.includes("bouquet.html")) {
 
       });
     });
-
-
-    if(currentURL.includes("faq.html")){
-      document.getElementById('livraison').addEventListener("click",()=>{
-        
-      }
-      )
-    }
-
   }
+
+  if(currentURL.includes("faq.html")){
+    console.log('coucou')
+    document.getElementById('livraison').addEventListener("click",()=>{
+      document.getElementById('faq-content').innerHTML=`
+      
+      <div class="faq-item">
+        <div class="faq-titre">
+          <h3 id="service-title">1. Qu'est-ce que votre service propose exactement?</h3>
+          <span class="rotate" id="arrow"></span>
+        </div>
+        <p id="service-description>Notre service offre une gamme complète de solutions dans le domaine [insérer le domaine]. Nous nous engageons à fournir [expliquer brièvement la mission].
+        </p>
+
+      </div>`
+
+      document.getElementById('arrow').addEventListener("click",()=>{
+        document.getElementById('service-description').style.display='flex'
+      })
+    }
+    )
+  }
+
+  

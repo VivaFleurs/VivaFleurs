@@ -121,6 +121,7 @@ body{
 
 .category-btn:hover {
   background-color: #95b475af;
+  cursor: pointer;
 }
 
 .faq-content {
@@ -165,6 +166,9 @@ h3 {
   transition: transform 0.3s ease;
 }
 
+#service-description{
+  display: none;
+}
 .rotate {
   transform: rotate(90deg); /* Initial rotation angle */
 }
