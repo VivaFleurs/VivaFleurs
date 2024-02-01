@@ -134,20 +134,43 @@ body{
 
 h3 {
   color: #333;
-  border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
   margin-bottom: 10px; 
   display: flex;
   justify-content: space-between; /* Aligns items horizontally, arrow will be on the right */
 }
 
+.faq-titre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+}
+
+#service-title {
+  flex: 1;
+  color: #333;
+  
+  padding-bottom: 5px;
+  margin-bottom: 10px; 
+}
+
 #arrow::after {
   content: "\276f"; 
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   font-size: 20px; 
   color: black;
-  
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.rotate {
+  transform: rotate(90deg); /* Initial rotation angle */
+}
+
+
+
 
 
 
