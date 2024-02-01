@@ -136,17 +136,20 @@ h3 {
   color: #333;
   border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
-  margin-bottom: 10px;
-  position: relative; 
+  margin-bottom: 10px; 
+  display: flex;
+  justify-content: space-between; /* Aligns items horizontally, arrow will be on the right */
 }
 
-h2::after {
+#arrow::after {
   content: "\276f"; 
-  transform: translateY(-50%);
-  margin-left: 10px; 
+  transform: rotate(90deg);
   font-size: 20px; 
-  color: black; 
+  color: black;
+  
 }
+
+
 
 /* FIN CATEGORIE BOUTON DESIGN */
 
