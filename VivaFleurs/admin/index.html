@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">    
     
     <script src="main.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -30,6 +31,39 @@
             <h1>ADMIN</h1>
         </div>
     </div>
+
+
+
+
+
+    <div id="popup-overlay"></div>
+
+    <div id="popup-container">
+      <h2>Connexion</h2>
+      <form id="login-form">
+        <label for="email">E-mail :</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+    
+        <button type="button" onclick="sendCode()">Envoyer le Code</button>
+      </form>
+    
+      <div id="code-input-container" style="display: none;">
+        <label for="code">Code de Vérification :</label>
+        <input type="text" id="code" name="code" required>
+    
+        <button type="button" onclick="verifyCode()">Vérifier le Code</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
 
 
 

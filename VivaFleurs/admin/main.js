@@ -1,5 +1,90 @@
+openPopup();
+
+function sendCode() {
+
+  var email = $('#email').val();
+  var password = $('#password').val();
+
+
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost/api.php',
+    data: {
+      action: 'generateCode',
+      email: email,
+      password: password
+    },
+    success: function(response) {
+      $('#code-input-container').show();
+      $('#login-form').hide();
+    },
+    error: function(error) {
+      console.error('Erreur lors de la génération du code :', error);
+    }
+  });
+}
+
+function verifyCode() {
+
+  var code = $('#code').val();
+
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost/api.php', 
+    data: {
+      action: 'verifyCode',
+      code: code
+    },
+    success: function(response) {
+      console.log(response.success)
+      if (response.success) {
+        $('#popup-container').hide();
+        $('#popup-overlay').hide();
+        
+      } else {
+        alert('Code incorrect. Veuillez réessayer.');
+      }
+    },
+    error: function(error) {
+      console.error('Erreur lors de la vérification du code :', error);
+    }
+  });
+}
+
+function openPopup() {
+  document.getElementById('popup-container').style.display = 'block';
+  document.getElementById('popup-overlay').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('popup-container').style.display = 'none';
+  document.getElementById('popup-overlay').style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 getProduit().then(data => {
-    console.log(data)
 
     const tableauHTML = `
     <table>
@@ -49,15 +134,19 @@ async function getProduit() {
       const response = await fetch('http://localhost/BDD.php');
       const data = await response.json();
       
-      // Traiter les données reçues
-      console.log(data);
-      
+      // Traiter les données reçues       
       return data;
     } catch (error) {
       console.error('Erreur lors de la récupération des données', error);
       throw error; // Pour propager l'erreur à l'appelant, si nécessaire
     }
 }
+
+
+
+
+
+
 
 
 // Creation formulaire au clic sur d'ajout
