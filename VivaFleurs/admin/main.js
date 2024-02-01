@@ -1,4 +1,4 @@
-openPopup();
+
 
 function sendCode() {
 
@@ -96,6 +96,7 @@ getProduit().then(data => {
           <th>Composotion</th>
           <th>Prix</th>
           <th>Entretien</th>
+          <th>Categorie</th>
           <th>Photo 1</th>
           <th>Photo 2</th>
           <th>Photo 3</th>
@@ -110,6 +111,7 @@ getProduit().then(data => {
             <td>${produit.composition}</td>
             <td>${produit.prix}</td>
             <td>${produit.entretien}</td>
+            <td>${produit.categorie}</td>
             <td><img src="${produit.photo1}" alt="Photo 1" style="width: 100px; height: 100px;"></td>
             <td><img src="${produit.photo2}" alt="Photo 2" style="width: 100px; height: 100px;"></td>
             <td><img src="${produit.photo3}" alt="Photo 3" style="width: 100+0px; height: 100px;"></td>
