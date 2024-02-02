@@ -67,111 +67,122 @@ body{
 
 
 .entreprise-text {
-    font-size: 2.5rem;
-    font-family: 'Caprasimo', serif;
-    color: whitesmoke;
-    text-align: center; /* Centre le texte horizontalement */
-    position: absolute; /* Position absolue pour le centrer dans l'image */
-    top: 55%; /* Déplace le haut du texte à 50% de la hauteur de l'image */
-    left: 50%; /* Déplace la gauche du texte à 50% de la largeur de l'image */
-    transform: translate(-50%, -50%); /* Centre le texte avec une translation */
-  }
+  font-size: 2.5rem;
+  font-family: 'Caprasimo', serif;
+  color: whitesmoke;
+  text-align: center; /* Centre le texte horizontalement */
+  position: absolute; /* Position absolue pour le centrer dans l'image */
+  top: 55%; /* Déplace le haut du texte à 50% de la hauteur de l'image */
+  left: 50%; /* Déplace la gauche du texte à 50% de la largeur de l'image */
+  transform: translate(-50%, -50%); /* Centre le texte avec une translation */
+}
   
-  .image-banner img {
-    height: 600px;
-    width: 600px;
-    margin: 0 30px;
-  }
+.image-banner img {
+  height: 600px;
+  width: 600px;
+  margin: 0 30px;
+}
   
-  .container-first-page{
-  
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,250,200,1) 11%, rgba(176,205,147,1) 56%, rgba(149,180,117,1) 100%);
-  
-  }
-  
-h1 {
-    text-align: center;
-    font-size: 2em;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  .category {
-    cursor: pointer;
-  }
+.container-first-page{
 
-  .category a{
-    background-color: black;
-  }
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,250,200,1) 11%, rgba(176,205,147,1) 56%, rgba(149,180,117,1) 100%);
+
+}
   
-  .submenu {
-    margin-left: 30%;
-    display: none;
-    margin-bottom: 10px;
-  }
-  
-  .submenu a {
-    color: #333;
-  }
 
 
-  /*CATEGORIE BOUTON DESIGN*/
+ /* CATEGORIE BOUTON DESIGN */
 
-  .answers {
-    display: flex;
-    flex-wrap: wrap;
+ .container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  display: flex;
 }
 
-  .faq-title{
-    color: #95B475;
-    margin-bottom: 5%;
-  }
-  .categories-btn{
-    margin-left: 1%;
-    width: 30px
-  }
+.categories {
+  flex: 0 0 10%; /* Largeur de la colonne des catégories */
+  padding-right: 20px;
+  
+}
 
-  .categories-btn button{
-    height: 30px;
-    width: 250px;
-    border-radius: 30px;
-    background-color: #95B475;
-    color: whitesmoke;
-    margin-bottom: 14%;
-    }
+.category-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #95B475;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
 
-    .categories-btn button:hover{
-        cursor: pointer;
-        transform: scale(1.01);
-    }
+.category-btn:hover {
+  background-color: #95b475af;
+  cursor: pointer;
+}
 
+.faq-content {
+  flex: 1;
+  padding-left: 20px;
+}
 
-.faq-section{
-    height: 50vh;
+.faq-item {
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #333;
+  padding-bottom: 5px;
+  margin-bottom: 10px; 
+  display: flex;
+  justify-content: space-between; /* Aligns items horizontally, arrow will be on the right */
+}
+
+.faq-titre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+}
+
+#service-title {
+  flex: 1;
+  color: #333;
+  
+  padding-bottom: 5px;
+  margin-bottom: 10px; 
+}
+
+.arrow::after {
+  content: "\276f"; 
+  transform: rotate(0deg);
+  font-size: 20px; 
+  color: black;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.none{
+  display: none;
+}
+
+.rotate {
+  transform: rotate(90deg); /* Initial rotation angle */
+}
+
+.rotate::after {
+  transform: rotate(-90deg); /* Initial rotation angle */
 }
 
 
-.answers-information-général{
-    margin-left: 20%;
-    width: 60%;
-    height: 30%;
-    text-align: left;
-    color: #95B475;
-}
 
 
-.answers-information-général p {
-    border-bottom:1px solid gray;
-    margin-bottom: 10%;
-}
 
 
-  /*FIN CATEGORIE BOUTON DESIGN*/
+
+/* FIN CATEGORIE BOUTON DESIGN */
+
