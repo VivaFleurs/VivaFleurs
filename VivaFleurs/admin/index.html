@@ -80,6 +80,32 @@
   <h2>Modification de la base de donnée</h2>
   <form  id="ajout" method="post" enctype="multipart/form-data">
 
+
+
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="description">Description image</label>
+    <textarea id="description" name="message" rows="4" required></textarea>
+
+    <label for="composition">Composition</label>
+    <textarea id="composition" name="composition" rows="4" required></textarea>
+
+    <label for="prix">Prix</label>
+    <input type="number" id="prix" name="prix" required>
+
+    <label for="entretient">Entretient</label>
+    <textarea id="entretient" name="entretient" rows="4" required></textarea>
+    
+    <label for="categorie">Catégorie</label>
+    <select id="categorie" name="categorie" required>
+        <option value="">--Please choose an option--</option>
+        <option value="1">Bouquet</option>
+        <option value="2">Fleur unique</option>
+        <option value="3">Plante</option>
+        <option value="4">Plante grasse</option>
+    </select>
+
     <label for="file">photo 1</label>
     <input type="file" accept=".png" required>
     
@@ -89,23 +115,7 @@
     <label for="file">photo 3</label>
     <input type="file" accept=".png" required>
 
-    <label for="name">Nom</label>
-    <input type="text" id="nom" name="nom" required>
-
-    <label for="message">Description image</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
-
-    <label for="message">Composition</label>
-    <textarea id="composition" name="composition" rows="4" required></textarea>
-
-    <label for="email">Prix</label>
-    <input type="text" id="email" name="email" required>
-
-    <label for="message">Entretient</label>
-    <input type="entretient" id="entretient" name="entretient" rows="4" required>
-    
-
-    <input class="envoyer" type="submit" value="Envoyer">
+    <input class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
 
   </form>
 </div>

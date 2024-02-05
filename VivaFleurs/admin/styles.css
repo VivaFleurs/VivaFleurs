@@ -113,6 +113,8 @@ body{
 
 }
 
+
+
 #popup-container {
   display: none;
   position: fixed;
@@ -123,6 +125,14 @@ body{
   padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+textarea {
+  width: 300px;
+}
+
+input{
+  width: 300px;
+}
+
 
 #popup-container h2 {
   margin-top: 0;
@@ -279,9 +289,15 @@ button:hover {
 }
 
 .envoyer {
-  border-radius: 2px;
+  width: 150px;
+  border-radius: 5px;
   background-color: #95B475;
   color: whitesmoke;
+  border: 5px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  padding: 5px;
 }
 
 .envoyer:hover {
