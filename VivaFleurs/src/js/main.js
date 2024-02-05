@@ -585,79 +585,65 @@ if(currentURL.includes("faq.html")){
 
 if(currentURL.includes("mention-legal.html")){
   console.log('mention-legal')
-  document.getElementById('stocks').addEventListener("click",()=>{
-    document.getElementById('faq-content').innerHTML=`
-    
-    <div class="faq-item">
-      <div class="faq-titre">
-        <h3 id="service-title">1. Qu'elles sont les informations générales?</h3>
-        <span class="rotate arrow" id="arrow1"></span>
-      </div>
-      <p id="stocks1-description"class="none">dzhdahdzdaiudiauzh.
-      </p>
-
-      <div class="faq-titre">
-        <h3 id="service-title">2. dzadadazdazdaz?</h3>
-        <span class="rotate arrow" id="arrow2"></span>
-      </div>
-
-      <p id="stocks2-description"class="none"> Cela se passe ............
-
-      <div class="faq-titre">
-      <h3 id="service-title">3. azdazdazdadazdazdad?</h3>
-      <span class="rotate arrow" id="arrow3"></span>
-    </div>
-
-    <p id="stocks3-description"class="none"> Cela se passe ............
-    </p>
-        
-    </div>`
-
-    document.getElementById('arrow1').addEventListener("click",()=>{
-      if(document.getElementById('stocks1-description').style.display==='none')
-      {
-        document.getElementById('stocks1-description').style.display='flex'
-        document.getElementById('arrow1').style.transform='rotate(-90deg)'
-      }
-     else {
-      document.getElementById('stocks1-description').style.display='none'
-        document.getElementById('arrow1').style.transform='rotate(90deg)'
-     }
-    })
+  document.getElementById("fleche1").addEventListener('click',()=>{
+    if(document.getElementById("stocks1-description").style.display==="none"){
+      document.getElementById("stocks1-description").style.display="flex";
+      document.getElementById("fleche1").classList.add("rotate")
 
 
-    
+    }
+    else{
+      document.getElementById("stocks1-description").style.display="none";
+      document.getElementById("fleche1").classList.remove("rotate")
 
-    document.getElementById('arrow2').addEventListener("click",()=>{
-      if(document.getElementById('stocks2-description').style.display==='none')
-      {
-        document.getElementById('stocks2-description').style.display='flex'
-        document.getElementById('arrow2').style.transform='rotate(-90deg)'
-      }
-     else {
-      document.getElementById('stocks2-description').style.display='none'
-        document.getElementById('arrow2').style.transform='rotate(90deg)'
-     }
-    })
+    }
+  })
+  
+
+}
 
 
-    document.getElementById('arrow3').addEventListener("click",()=>{
-      if(document.getElementById('stocks2-description').style.display==='none')
-      {
-        document.getElementById('stocks2-description').style.display='flex'
-        document.getElementById('arrow3').style.transform='rotate(-90deg)'
-      }
-     else {
-      document.getElementById('stocks3-description').style.display='none'
-        document.getElementById('arrow3').style.transform='rotate(90deg)'
-     }
-    })
+
+if(currentURL.includes("mention-legal.html")){
+  console.log('mention-legal')
+  document.getElementById("fleche2").addEventListener('click',()=>{
+    if(document.getElementById("stocks2-description").style.display==="none"){
+      document.getElementById("stocks2-description").style.display="flex";
+      document.getElementById("fleche2").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("stocks2-description").style.display="none";
+      document.getElementById("fleche2").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
 
 
 
 
-  }
-  )
+
+if(currentURL.includes("mention-legal.html")){
+  console.log('mention-legal')
+  document.getElementById("fleche3").addEventListener('click',()=>{
+    if(document.getElementById("stocks3-description").style.display==="none"){
+      document.getElementById("stocks3-description").style.display="flex";
+      document.getElementById("fleche3").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("stocks3-description").style.display="none";
+      document.getElementById("fleche3").classList.remove("rotate")
+
+    }
+  })
+  
+
 }
 
 
