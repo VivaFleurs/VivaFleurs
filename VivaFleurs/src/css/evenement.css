@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+*{
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    
+}
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/*NAVBAR*/
+
+/* Style pour la barre de navigation */
+.navbar {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .navbar img{
+    max-width: 50px; /* Ajustez la taille du logo */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+    position: relative;
+
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #95B475;
+    font-size:22px;
+    padding-bottom: 5px;
+    font-weight:bold;
+  }
+
+  .nav-links li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #95B475;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+}
+
+
+.nav-links li a:hover::after{
+    width: 100%;
+}
+
+/* Update these styles in your existing evenement.css file */
+
+.container-first-page {
+
+  margin-bottom: 50px;
+}
+
+.banner-valentine {
+  background: url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-valentines-day-background-illustration-love-gift-box-pink-image_21289.jpg') center/cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 4px 8px rgba(133, 133, 133, 0.644);
+}
+
+
+.valentine-text {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #000000;
+}
+
+.valentine-text h1 {
+  font-family: 'Caprasimo', serif;
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
+
+.valentine-text p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+
+
+/* FIN navbar */
+
+
+
+
+
+
+
+
+/* DEBUT container */
+
+/* Styles de base pour les cartes */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+  position: relative;
+}
+
+
+.row h1{
+  color: #95B475;
+}
+
+.column {
+  position: relative;
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+  height: 400px; /* Ajustez la hauteur selon vos besoins */
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 15px; /* Pour arrondir les bords de la carte */
+  box-shadow: 0px 0px 10px #8a8a8a;
+  background-color: #fff;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px; /* Pour arrondir les bords de l'image */
+  color: black;
+  
+}
+
+.card img {
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+  height: 300px;
+  transition: transform 0.5s ease;
+  object-fit: cover; /* Pour ajuster la taille de l'image tout en conservant les proportions */
+}
+
+.card-text-bas{
+  text-align: center;
+  margin-top: 25px;
+  opacity: 1;
+  transition: 0.5s;
+  
+}
+
+
+.card-text {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-color: rgba(255, 255, 255, 0.884);
+  width: 100%;
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: left 0.5s ease;
+  display: flex;
+  padding-top: 5px;
+
+  flex-direction: column;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  
+}
+.card-text h2{
+  padding-top: 10px;
+  text-align: start;
+  font-size: 25px;
+}
+
+.card-text h1{
+  padding-top: 10px;
+}
+
+
+.card-text p{
+  text-align: start;
+  font-size: 20px;
+}
+
+
+/* Animation au survol */
+.column:hover .card-text {
+  left: 0;
+}
+
+.column:hover .card-text-bas {
+  opacity: 0;
+  transition: 0.5s;
+
+}
+
+/* Media query pour ajuster la disposition quand l'espace est réduit */
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Les cartes seront empilées en colonnes */
+    align-items: center; /* Les cartes seront centrées horizontalement */
+  }
+}
+
+
+
+/* FIN container */
+
+
+
+
+
+
+
+
+/* DEBUT footer */
+
+
+footer{
+    margin-top: 10px;
+  
+  }
+  
+  footer .foot-main{
+    
+    background: #95B475;
+    display: flex;
+    justify-content: space-between;
+    flex: 25%;
+    flex-wrap: wrap;
+    
+  
+  
+  }
+  .foot-row{
+    padding: 20px 40px;
+    margin: 20px;
+  
+  
+  }
+  .foot-row h4{
+    color: rgb(240, 230, 230);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    position: relative;
+    text-transform: uppercase;    
+    
+  }
+  .foot-row h4::before{
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: -10px;
+    background-color: #586947;
+    width: 50px;
+    height: 2px;
+  
+  }
+  
+  .foot-row li{
+    list-style: none;
+    margin: 15px 0;
+  }
+  .foot-row li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block; 
+    transition: all 0.3s ease;
+  
+  }
+  .foot-row li a:hover{
+    color: #fff;
+    transform: translateX(20px);
+    transition: all 0.80s ease;
+  }
+  
+  .social-icon ul li{
+    list-style: none;
+    display: inline-block;
+    background: white;
+    border-radius: 50%;
+  
+  }
+  .social-icon ul li i{
+    color: black;
+    margin: 5px;
+    display: block; 
+    transition: all 0.3s ease;
+    
+  }
+  .social-icon ul li i:hover{
+    padding-left: 10px;
+  }   
+  
+  @media(max-width: 768px){
+    footer .foot-main{
+        width: 100%;    
+        margin-bottom: 30px;
+    }
+        
+  }
+  
+  /* FIN footer */
+  
