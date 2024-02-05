@@ -60,6 +60,11 @@ function ajoutProduit() {
   let prix = document.getElementById('prix').value
   let entretient = document.getElementById('entretient').value
   let categorie = document.getElementById('categorie').value
+  console.log(nom)
+  console.log(description)
+  console.log(composition)
+  console.log(prix)
+  console.log(entretient)
   console.log(categorie)
   /* la récupération est a faire une fois qu'elle seront enregistrer sur le serveur */
   let photo1 = "";
