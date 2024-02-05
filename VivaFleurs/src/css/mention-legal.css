@@ -19,6 +19,7 @@ body{
   
 }
 
+
   .navbar img{
     max-width: 50px; /* Ajustez la taille du logo */
   }
@@ -90,78 +91,99 @@ body{
   
 
 
+
  /* CATEGORIE BOUTON DESIGN */
 
  .container {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 20px;
-  display: flex;
-}
-
-.categories {
-  flex: 0 0 10%; /* Largeur de la colonne des catégories */
-  padding-right: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    display: flex;
+  }
   
-}
-.faq-content {
-  flex: 1;
-  padding-left: 20px;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-}
-
-h3 {
-  color: #333;
-  padding-bottom: 5px;
-  margin-bottom: 10px; 
-  display: flex;
-  justify-content: lefts;
-}
-
-.faq-titre {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 2px solid #ccc;
-}
-
-#service-title {
-  flex: 1;
-  color: #333;
-  padding-bottom: 5px;
-  margin-bottom: 10px; 
-}
-
-.arrow::after {
-  content: "\276f"; 
-  transform: rotate(0deg);
-  font-size: 20px; 
-  color: black;
-  margin-left: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.none{
-  display: none;
-}
-
-.rotate {
-  transform: rotate(90deg); /* Initial rotation angle */
-}
-
-.rotate::after {
-  transform: rotate(-90deg); /* Initial rotation angle */
-}
-
-
-
-
-
-
-
-/* FIN CATEGORIE BOUTON DESIGN */
-
+  .categories {
+    flex: 0 0 10%; /* Largeur de la colonne des catégories */
+    padding-right: 20px;
+    
+  }
+  
+  .category-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #95B475;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .category-btn:hover {
+    background-color: #95b475af;
+    cursor: pointer;
+  }
+  
+  .faq-content {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    color: #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px; 
+    display: flex;
+    justify-content: space-between; /* Aligns items horizontally, arrow will be on the right */
+  }
+  
+  .faq-titre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  #service-title {
+    flex: 1;
+    color: #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px; 
+  }
+  
+  .arrow::after {
+    content: "\276f"; 
+    transform: rotate(0deg);
+    font-size: 20px; 
+    color: black;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .none{
+    display: none;
+  }
+  
+  .rotate {
+    transform: rotate(90deg); /* Initial rotation angle */
+  }
+  
+  .rotate::after {
+    transform: rotate(-90deg); /* Initial rotation angle */
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* FIN CATEGORIE BOUTON DESIGN */
+  
+  
