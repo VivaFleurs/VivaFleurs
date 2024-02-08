@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">   
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/data.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 <body>
@@ -39,26 +40,10 @@
     </div>
 
 
-    <div class="row"><h1>Meilleures ventes</h1></div>
-    <section class="row">
-        <a class="card-link" href="bouquet.html?id=${produit.id_produit}">
-            <div class="column">
-              <div class="card">
-                <img src="../image/Image-shooting/autre/belle-chic-collection/IMG_1898.jpeg" alt="">
-                <div class="card-text-bas">
-                  <h2>${produit.nom}</h2>
-                  <h3>${produit.prix}€</h3>
-                </div>
-              </div>
-              <div class="card-text">
-                <h1>${produit.nom}</h1>
-                <h2>Description</h2>
-                <p>${produit.description}</p>
-                <h2>Fleurs :</h2>
-                <p>${produit.composition}</p>
-              </div>
-            </div>
-          </a>
+    <div class="row"><h1>Nos produits événement</h1></div>
+    <div class="row"><img id="gif" src="./img/Loading.gif" alt="Loading"></div>
+    <section id ="container-evenement"  class="row">
+
     </section>
 
 
