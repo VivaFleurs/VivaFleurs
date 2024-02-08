@@ -1,42 +1,98 @@
 
 var currentURL = window.location.href;
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Début page catalogue
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
 if (currentURL.includes("catalogue.html")) {
-
   var catalogueContainer = document.getElementById('catalogue');
-
+  var loadingGif = document.getElementById('gif');
+  loadingGif.style.display = "block"; // Afficher l'indicateur de chargement
 
   getProduit().then(data => {
+    // Variables pour stocker les produits par catégorie
+    var catalogueHTML = '';
 
+    // Ajout des balises <h1> pour chaque catégorie
+    var bouquetHTML = '<div class="row"><h1>Bouquet</h1></div><div class="row">';
+    var fleurHTML = '<div class="row"><h1>Fleur unique</h1></div><div class="row">';
+    var planteHTML = '<div class="row"><h1>Plante</h1></div><div class="row">';
+    var bouquetsecHTML = '<div class="row"><h1>Bouquet sec</h1></div><div class="row">';
+    var autreHTML = '<div class="row"><h1>Autre</h1></div><div class="row">';
+
+    // Parcours des données pour classer les produits par catégorie
     data.forEach(produit => {
-
-      var produitHTML = `
-        <a class="card-link" href="bouquet.html?id=${produit.id_produit}">
-          <div class="column">
-            <div class="card">
-              <img src="${produit.photo1}" alt="">
-              <div class="card-text-bas">
-                <h2>${produit.nom}</h2>
-                <h3>${produit.prix}€</h3>
+      if (produit.afficher == 1) {
+        var produitHTML = `
+          <a class="card-link" href="bouquet.html?id=${produit.id_produit}">
+            <div class="column">
+              <div class="card">
+                <img src="${produit.photo1}" alt="">
+                <div class="card-text-bas">
+                  <h2>${produit.nom}</h2>
+                  <h3>${produit.prix}€</h3>
+                </div>
+              </div>
+              <div class="card-text">
+                <h1>${produit.nom}</h1>
+                <h2>Description</h2>
+                <p>${produit.description}</p>
+                <h2>Fleurs :</h2>
+                <p>${produit.composition}</p>
               </div>
             </div>
-            <div class="card-text">
-              <h1>${produit.nom}</h1>
-              <h2>Description</h2>
-              <p>${produit.description}</p>
-              <h2>Fleurs :</h2>
-              <p>${produit.composition}</p>
-            </div>
-          </div>
-        </a>
-      `;
+          </a>
+        `;
 
-      catalogueContainer.innerHTML += produitHTML;
+        // Ajout du produit à la catégorie correspondante
+        switch (produit.categorie.toLowerCase()) {
+          case 'bouquet':
+            bouquetHTML += produitHTML;
+            break;
+          case 'fleur unique':
+            fleurHTML += produitHTML;
+            break;
+          case 'plante':
+            planteHTML += produitHTML;
+            break;
+          case 'bouquet sec':
+            bouquetsecHTML += produitHTML;
+            break;
+          case 'autre':
+            autreHTML += produitHTML;
+            break;
+          default:
+            break;
+        }
+      }
     });
-    document.getElementById('gif').style.display = "none"
 
+    bouquetHTML += '</div>';
+    fleurHTML += '</div>';
+    planteHTML += '</div>';
+    bouquetsecHTML += '</div>';
+    autreHTML += '</div>';
+
+    catalogueHTML += bouquetHTML + fleurHTML + planteHTML + bouquetsecHTML + autreHTML;
+    catalogueContainer.innerHTML = catalogueHTML;
+
+    loadingGif.style.display = "none";
   });
 }
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Début page bouquet
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 if (currentURL.includes("bouquet.html")) {
@@ -47,7 +103,7 @@ if (currentURL.includes("bouquet.html")) {
     getProduit().then(data => {
 
       data.forEach(produit => {
-          if (produit.id_produit === productId) {
+          if (produit.id_produit == productId) {
             var produitHTML = `
             <div class="col">
                 <div class="row">
@@ -102,6 +158,93 @@ if (currentURL.includes("bouquet.html")) {
       });
     });
   }
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Début page evenement
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+if (currentURL.includes("evenement.html")) {
+
+  var evenementContainer = document.getElementById('container-evenement');
+
+
+  getProduit().then(data => {
+
+    data.forEach(produit => {
+
+      if(produit.evenement == 1){
+
+        var produitHTML = `
+          <a class="card-link" href="bouquet.html?id=${produit.id_produit}">
+            <div class="column">
+              <div class="card">
+                <img src="${produit.photo1}" alt="">
+                <div class="card-text-bas">
+                  <h2>${produit.nom}</h2>
+                  <h3>${produit.prix}€</h3>
+                </div>
+              </div>
+              <div class="card-text">
+                <h1>${produit.nom}</h1>
+                <h2>Description</h2>
+                <p>${produit.description}</p>
+                <h2>Fleurs :</h2>
+                <p>${produit.composition}</p>
+              </div>
+            </div>
+          </a>
+        `;
+
+        evenementContainer.innerHTML += produitHTML;
+      }
+    });
+    document.getElementById('gif').style.display = "none"
+
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////

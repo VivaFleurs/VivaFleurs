@@ -157,6 +157,8 @@ getProduit().then(data => {
           <th>Photo 1</th>
           <th>Photo 2</th>
           <th>Photo 3</th>
+          <th>Afficher</th>
+          <th>Événement</th>
         </tr>
       </thead>
       <tbody>
@@ -172,11 +174,16 @@ getProduit().then(data => {
             <td><img src="${produit.photo1}" alt="Photo 1" style="width: 100px; height: 100px;"></td>
             <td><img src="${produit.photo2}" alt="Photo 2" style="width: 100px; height: 100px;"></td>
             <td><img src="${produit.photo3}" alt="Photo 3" style="width: 100+0px; height: 100px;"></td>
-          </tr>
+            <td><button onclick="toggleVisibilityAfficher(${produit.id_produit}, ${produit.afficher})">${produit.afficher === 1 ? 'On' : 'Off'}</button></td>
+            <td><button onclick="toggleVisibilityEvenement(${produit.id_produit}, ${produit.evenement})">${produit.evenement === 1 ? 'On' : 'Off'}</button></td>
+
+            /tr>
         `).join('')}
       </tbody>
     </table>
   `;
+
+  
 
     // Injecter le tableau HTML dans l'élément avec l'ID "resultat"
     document.getElementById('container').innerHTML = tableauHTML;
@@ -200,6 +207,108 @@ async function getProduit() {
       throw error; // Pour propager l'erreur à l'appelant, si nécessaire
     }
 }
+
+
+function toggleVisibilityAfficher(productId, currentStatus) {
+  if (currentStatus === 1) {
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/api.php', 
+      data: {
+        action: 'toggleVisibilityAfficher',
+        id: productId,
+        toggle: "off"
+      },
+      success: function(response) {
+        console.log(response.success)
+        if (response.success) {
+          
+          alert("Produit cacher avec succés !");
+          location.reload();
+          
+        }
+      },
+      error: function(error) {
+        console.error('Erreur lors du masquage du produit :', error);
+      }
+    });
+  } else {
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/api.php', 
+      data: {
+        action: 'toggleVisibilityAfficher',
+        id: productId,
+        toggle: "on"
+      },
+      success: function(response) {
+        console.log(response.success)
+        if (response.success) {
+          alert("Produit afficher avec succés !");
+          location.reload();
+          
+        } else {
+          alert('Code incorrect. Veuillez réessayer.');
+        }
+      },
+      error: function(error) {
+        console.error('Erreur lors de l\'affichage du produit :', error);
+      }
+    });
+  }
+}
+
+
+function toggleVisibilityEvenement(productId, currentStatus) {
+  if (currentStatus === 1) {
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/api.php', 
+      data: {
+        action: 'toggleVisibilityEvenement',
+        id: productId,
+        toggle: "off"
+      },
+      success: function(response) {
+        console.log(response.success)
+        if (response.success) {
+          
+          alert("Produit cacher avec succés !");
+          location.reload();
+          
+        }
+      },
+      error: function(error) {
+        console.error('Erreur lors du masquage du produit :', error);
+      }
+    });
+  } else {
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/api.php', 
+      data: {
+        action: 'toggleVisibilityEvenement',
+        id: productId,
+        toggle: "on"
+      },
+      success: function(response) {
+        console.log(response.success)
+        if (response.success) {
+          alert("Produit afficher avec succés !");
+          location.reload();
+          
+        } else {
+          alert('Code incorrect. Veuillez réessayer.');
+        }
+      },
+      error: function(error) {
+        console.error('Erreur lors de l\'affichage du produit :', error);
+      }
+    });
+  }
+}
+
+
 
 // Creation formulaire au clic sur d'ajout
 document.getElementById('ajout').addEventListener("submit", async (e) => {
