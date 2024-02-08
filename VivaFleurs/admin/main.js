@@ -137,6 +137,18 @@ function closePopup() {
 
 
 
+async function getProduit() {
+  try {
+    const response = await fetch('http://localhost/BDD.php');
+    const data = await response.json();
+    
+    // Traiter les données reçues       
+    return data;
+  } catch (error) {
+    console.error('Erreur lors de la récupération des données', error);
+    throw error; // Pour propager l'erreur à l'appelant, si nécessaire
+  }
+}
 
 
 
@@ -147,7 +159,6 @@ getProduit().then(data => {
     <table>
       <thead>
         <tr>
-          <th>ID Produit</th>
           <th>Nom</th>
           <th>Description</th>
           <th>Composotion</th>
@@ -159,16 +170,16 @@ getProduit().then(data => {
           <th>Photo 3</th>
           <th>Afficher</th>
           <th>Événement</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         ${data.map(produit => `
           <tr>
-            <td>${produit.id_produit}</td>
             <td>${produit.nom}</td>
             <td>${produit.description}</td>
             <td>${produit.composition}</td>
-            <td>${produit.prix}</td>
+            <td>${produit.prix}€</td>
             <td>${produit.entretien}</td>
             <td>${produit.categorie}</td>
             <td><img src="${produit.photo1}" alt="Photo 1" style="width: 100px; height: 100px;"></td>
@@ -176,8 +187,7 @@ getProduit().then(data => {
             <td><img src="${produit.photo3}" alt="Photo 3" style="width: 100+0px; height: 100px;"></td>
             <td><button onclick="toggleVisibilityAfficher(${produit.id_produit}, ${produit.afficher})">${produit.afficher === 1 ? 'On' : 'Off'}</button></td>
             <td><button onclick="toggleVisibilityEvenement(${produit.id_produit}, ${produit.evenement})">${produit.evenement === 1 ? 'On' : 'Off'}</button></td>
-
-            /tr>
+            <td><button onclick="supprimer(${produit.id_produit})">Supprimer</button> <button onclick="">modifier</button></td>
         `).join('')}
       </tbody>
     </table>
@@ -191,22 +201,6 @@ getProduit().then(data => {
     // Masquer l'élément avec l'ID "gif"
     document.getElementById('gif').style.display = "none";
 });
-
-
-
-
-async function getProduit() {
-    try {
-      const response = await fetch('http://localhost/BDD.php');
-      const data = await response.json();
-      
-      // Traiter les données reçues       
-      return data;
-    } catch (error) {
-      console.error('Erreur lors de la récupération des données', error);
-      throw error; // Pour propager l'erreur à l'appelant, si nécessaire
-    }
-}
 
 
 function toggleVisibilityAfficher(productId, currentStatus) {
@@ -308,7 +302,26 @@ function toggleVisibilityEvenement(productId, currentStatus) {
   }
 }
 
-
+function supprimer(productId){
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost/api.php', 
+    data: {
+      action: 'supprimerProduit',
+      id: productId
+    },
+    success: function(response) {
+      console.log(response.success)
+      if (response.success) {
+        alert("Produit supprimé avec succés !");
+        
+      }
+    },
+    error: function(error) {
+      console.error('Erreur lors de la suppression du produit :', error);
+    }
+  });
+}
 
 // Creation formulaire au clic sur d'ajout
 document.getElementById('ajout').addEventListener("submit", async (e) => {
