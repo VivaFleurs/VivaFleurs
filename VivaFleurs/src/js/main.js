@@ -717,8 +717,6 @@ if(currentURL.includes("faq.html")){
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Début mention légal
@@ -726,77 +724,36 @@ if(currentURL.includes("faq.html")){
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-if(currentURL.includes("mention-legal.html")){
-  console.log('mention-legal')
-  document.getElementById("fleche1").addEventListener('click',()=>{
-    if(document.getElementById("stocks1-description").style.display==="none"){
-      document.getElementById("stocks1-description").style.display="flex";
-      document.getElementById("fleche1").classList.add("rotate")
+if (currentURL.includes("mention-legal.html")) {
 
 
+
+  console.log('cocoucoucouc');
+
+  const toggleDescription = (id_p, id_span) => {
+    const element = document.getElementById(id_p);
+
+    if (element.style.display === "none" || !element.style.display) {
+      element.style.display = "flex";
+      document.getElementById(id_span).classList.add("rotate");
+    } else {
+      element.style.display = "none";
+      document.getElementById(id_span).classList.remove("rotate");
     }
-    else{
-      document.getElementById("stocks1-description").style.display="none";
-      document.getElementById("fleche1").classList.remove("rotate")
+  };
 
-    }
-  })
-  
-
-}
-
-
-
-if(currentURL.includes("mention-legal.html")){
-  console.log('mention-legal')
-  document.getElementById("fleche2").addEventListener('click',()=>{
-    if(document.getElementById("stocks2-description").style.display==="none"){
-      document.getElementById("stocks2-description").style.display="flex";
-      document.getElementById("fleche2").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("stocks2-description").style.display="none";
-      document.getElementById("fleche2").classList.remove("rotate")
-
-    }
-  })
-  
-
-}
-
-
-
-
-
-if(currentURL.includes("mention-legal.html")){
-  console.log('mention-legal')
-  document.getElementById("fleche3").addEventListener('click',()=>{
-    if(document.getElementById("stocks3-description").style.display==="none"){
-      document.getElementById("stocks3-description").style.display="flex";
-      document.getElementById("fleche3").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("stocks3-description").style.display="none";
-      document.getElementById("fleche3").classList.remove("rotate")
-
-    }
-  })
-  
-
+  document.getElementById("fleche1").addEventListener('click', () => toggleDescription("stocks1-description","fleche1"));
+  document.getElementById("fleche2").addEventListener('click', () => toggleDescription("stocks2-description","fleche2"));
+  document.getElementById("fleche3").addEventListener('click', () => toggleDescription("stocks3-description","fleche3"));
+ 
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Fin configuration mention légal
+//Fin mention legal
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 
