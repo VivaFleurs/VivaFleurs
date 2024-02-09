@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.google.com/specimen/Diphylleia?subset=latin&noto.script=Kore&preview.text=bonjour');
 
 *{
     margin: 0%;
@@ -8,7 +9,7 @@
 }
 
 body{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'josefin', sans-serif;
 }
 
 .navbar {

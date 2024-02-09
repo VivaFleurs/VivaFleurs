@@ -797,3 +797,212 @@ if(currentURL.includes("mention-legal.html")){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Début configuration politique de confidentialité
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+console.log('cocoucoucouc')
+}
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+  console.log('politique-confifififi')
+  document.getElementById("fleche4").addEventListener('click',()=>{
+    if(document.getElementById("vivafleurs-description").style.display==="none"){
+      document.getElementById("vivafleurs-description").style.display="flex";
+      document.getElementById("fleche4").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("vivafleurs-description").style.display="none";
+      document.getElementById("fleche4").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
+
+
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+  console.log('politique-confi')
+  document.getElementById("fleche5").addEventListener('click',()=>{
+    if(document.getElementById("collecte-description").style.display==="none"){
+      document.getElementById("collecte-description").style.display="flex";
+      document.getElementById("fleche5").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("collecte-description").style.display="none";
+      document.getElementById("fleche5").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
+
+
+
+
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+  console.log('politique-confi')
+  document.getElementById("fleche6").addEventListener('click',()=>{
+    if(document.getElementById("utilisation-description").style.display==="none"){
+      document.getElementById("utilisation-description").style.display="flex";
+      document.getElementById("fleche6").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("utilisation-description").style.display="none";
+      document.getElementById("fleche6").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
+
+
+
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+  console.log('politique-confi')
+  document.getElementById("fleche7").addEventListener('click',()=>{
+    if(document.getElementById("protection-description").style.display==="none"){
+      document.getElementById("protection-description").style.display="flex";
+      document.getElementById("fleche7").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("protection-description").style.display="none";
+      document.getElementById("fleche7").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
+
+
+
+
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+  console.log('politique-confi')
+  document.getElementById("fleche8").addEventListener('click',()=>{
+    if(document.getElementById("partage-description").style.display==="none"){
+      document.getElementById("partage-description").style.display="flex";
+      document.getElementById("fleche8").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("partage-description").style.display="none";
+      document.getElementById("fleche8").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
+
+
+
+
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+  console.log('politique-confi')
+  document.getElementById("fleche9").addEventListener('click',()=>{
+    if(document.getElementById("modification-description").style.display==="none"){
+      document.getElementById("modification-description").style.display="flex";
+      document.getElementById("fleche9").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("modification-description").style.display="none";
+      document.getElementById("fleche9").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
+
+
+
+
+
+
+if(currentURL.includes("politique-de-confidentialite.html")){
+  console.log('politique-confi')
+  document.getElementById("fleche10").addEventListener('click',()=>{
+    if(document.getElementById("info-sup-description").style.display==="none"){
+      document.getElementById("info-sup-description").style.display="flex";
+      document.getElementById("fleche10").classList.add("rotate")
+
+
+    }
+    else{
+      document.getElementById("info-sup-description").style.display="none";
+      document.getElementById("fleche10").classList.remove("rotate")
+
+    }
+  })
+  
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Fin configuration politique de confidentialité
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Début map livraison 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var map = L.map('map').setView([46.603354, 1.888334], 6); // Centre de la France
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+// Charger les données des communes depuis votre fichier JSON et ajouter des marqueurs pour chaque commune
+fetch('./json/communes-72-sarthe.json')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(commune => {
+      L.marker([commune.latitude, commune.longitude]).addTo(map)
+        .bindPopup(commune.nom);
+    });
+  });
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Fin map livraison 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
