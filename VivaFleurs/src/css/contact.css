@@ -1,94 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
 *{
-    margin: 0%;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
+  margin: 0%;
+  list-style: none;
+  text-decoration: none;
 }
 
 body{
-  font-family: 'Josefin Sans', sans-serif;
+font-family: 'josefin', sans-serif;
 }
 
-/*NAVBAR*/
-
-/* Style pour la barre de navigation */
 .navbar {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-  }
+background-color: rgb(255, 255, 255);
+display: flex;
+align-items: center;
+justify-content: space-between;
 
-  .navbar img{
-    max-width: 50px; /* Ajustez la taille du logo */
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin-right: 20px;
-    position: relative;
+}
 
-  }
-  
-  .nav-links a {
 
-    text-decoration: none;
-    color: #95B475;
-    font-size:22px;
-    padding-bottom: 5px;
-    font-weight:bold;
-  }
+.navbar img{
+  max-width: 50px; /* Ajustez la taille du logo */
+}
 
-  .nav-links li a::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0%;
-    background-color: #95B475;
-    position: absolute;
-    transition: all ease-in-out 250ms;
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+  position: relative;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #95B475;
+  font-size:22px;
+  padding-bottom: 5px;
+  font-weight:bold;
+}
+.nav-links li a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0%;
+  background-color: #95B475;
+  position: absolute;
+  transition: all ease-in-out 250ms;
 }
 
 
 .nav-links li a:hover::after{
-    width: 100%;
+  width: 100%;
 }
 
 
-/* Style pour la bannière */
-.banner {
-  background-color: #95B475;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px; /* Ajustez le padding selon vos besoins */
-
+.welcome-display {
+display: flex;
+justify-content: center; /* Centre horizontalement le contenu */
+align-items: center; /* Centre verticalement le contenu */
+height: 100vh; /* Ajuste la hauteur selon tes besoins */
 }
 
-.banner-title {
-  color: #ffffff;
-  font-size: 50px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-around; /* Espacement égal */
-  width: 70%; /* Ajustez la largeur de la zone du texte */
-  margin: auto; /* Centre l'ensemble */
+.entreprise-text {
+font-size: 2.5rem;
+font-family: 'Caprasimo', serif;
+color: whitesmoke;
+text-align: center; /* Centre le texte horizontalement */
+position: absolute; /* Position absolue pour le centrer dans l'image */
+top: 55%; /* Déplace le haut du texte à 50% de la hauteur de l'image */
+left: 50%; /* Déplace la gauche du texte à 50% de la largeur de l'image */
+transform: translate(-50%, -50%); /* Centre le texte avec une translation */
 }
 
-.banner-title h1 {
-  margin: 0;  
+.image-banner img {
+height: 600px;
+width: 600px;
+margin: 0 30px;
 }
 
-.banner-title img {
-  width: 550px; /* Ajustez la taille des images */
-  margin: 0 20px; /* Ajustez la marge entre l'image et le texte */
+.container-first-page{
+
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,250,200,1) 11%, rgba(176,205,147,1) 56%, rgba(149,180,117,1) 100%);
+
 }
 
 
