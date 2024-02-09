@@ -2,59 +2,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 *{
-    margin: 0%;
-    list-style: none;
-    text-decoration: none;
+  margin: 0%;
+  list-style: none;
+  text-decoration: none;
 }
 
 body{
-  font-family: 'Josefin Sans', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
 }
 
 .navbar {
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
+background-color: rgb(255, 255, 255);
+display: flex;
+align-items: center;
+justify-content: space-between;
+
 }
 
+.navbar img{
+  max-width: 50px; /* Ajustez la taille du logo */
+}
 
-  .navbar img{
-    max-width: 50px; /* Ajustez la taille du logo */
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin-right: 20px;
-    position: relative;
+.nav-links {
+  list-style: none;
+  display: flex;
+}
 
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #95B475;
-    font-size:larger;
-    padding-bottom: 5px;
-    font-weight:bold;
-  }
-  .nav-links li a::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 0%;
-    background-color: #95B475;
-    position: absolute;
-    transition: all ease-in-out 250ms;
+.nav-links li {
+  margin-right: 20px;
+  position: relative;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #95B475;
+  font-size:22px;
+  padding-bottom: 5px;
+  font-weight:bold;
+}
+.nav-links li a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0%;
+  background-color: #95B475;
+  position: absolute;
+  transition: all ease-in-out 250ms;
 }
 
 
 .nav-links li a:hover::after{
-    width: 100%;
+  width: 100%;
 }
 
 
