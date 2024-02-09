@@ -232,6 +232,7 @@ footer .foot-main{
 .foot-row li{
   list-style: none;
   margin: 15px 0;
+  font-size: 1.1rem;
 }
 .foot-row li a{
   color: #ffffff;
