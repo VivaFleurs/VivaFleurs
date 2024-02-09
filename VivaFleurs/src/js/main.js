@@ -806,163 +806,32 @@ if(currentURL.includes("mention-legal.html")){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-if(currentURL.includes("politique-de-confidentialite.html")){
-console.log('cocoucoucouc')
-}
 
-if(currentURL.includes("politique-de-confidentialite.html")){
-  console.log('politique-confifififi')
-  document.getElementById("fleche4").addEventListener('click',()=>{
-    if(document.getElementById("vivafleurs-description").style.display==="none"){
-      document.getElementById("vivafleurs-description").style.display="flex";
-      document.getElementById("fleche4").classList.add("rotate")
+if (currentURL.includes("politique-de-confidentialite.html")) {
 
 
+
+  console.log('cocoucoucouc');
+
+  const toggleDescription = (id_p, id_span) => {
+    const element = document.getElementById(id_p);
+
+    if (element.style.display === "none" || !element.style.display) {
+      element.style.display = "flex";
+      document.getElementById(id_span).classList.add("rotate");
+    } else {
+      element.style.display = "none";
+      document.getElementById(id_span).classList.remove("rotate");
     }
-    else{
-      document.getElementById("vivafleurs-description").style.display="none";
-      document.getElementById("fleche4").classList.remove("rotate")
+  };
 
-    }
-  })
-  
-
-}
-
-
-
-if(currentURL.includes("politique-de-confidentialite.html")){
-  console.log('politique-confi')
-  document.getElementById("fleche5").addEventListener('click',()=>{
-    if(document.getElementById("collecte-description").style.display==="none"){
-      document.getElementById("collecte-description").style.display="flex";
-      document.getElementById("fleche5").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("collecte-description").style.display="none";
-      document.getElementById("fleche5").classList.remove("rotate")
-
-    }
-  })
-  
-
-}
-
-
-
-
-
-if(currentURL.includes("politique-de-confidentialite.html")){
-  console.log('politique-confi')
-  document.getElementById("fleche6").addEventListener('click',()=>{
-    if(document.getElementById("utilisation-description").style.display==="none"){
-      document.getElementById("utilisation-description").style.display="flex";
-      document.getElementById("fleche6").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("utilisation-description").style.display="none";
-      document.getElementById("fleche6").classList.remove("rotate")
-
-    }
-  })
-  
-
-}
-
-
-
-
-if(currentURL.includes("politique-de-confidentialite.html")){
-  console.log('politique-confi')
-  document.getElementById("fleche7").addEventListener('click',()=>{
-    if(document.getElementById("protection-description").style.display==="none"){
-      document.getElementById("protection-description").style.display="flex";
-      document.getElementById("fleche7").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("protection-description").style.display="none";
-      document.getElementById("fleche7").classList.remove("rotate")
-
-    }
-  })
-  
-
-}
-
-
-
-
-
-if(currentURL.includes("politique-de-confidentialite.html")){
-  console.log('politique-confi')
-  document.getElementById("fleche8").addEventListener('click',()=>{
-    if(document.getElementById("partage-description").style.display==="none"){
-      document.getElementById("partage-description").style.display="flex";
-      document.getElementById("fleche8").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("partage-description").style.display="none";
-      document.getElementById("fleche8").classList.remove("rotate")
-
-    }
-  })
-  
-
-}
-
-
-
-
-
-if(currentURL.includes("politique-de-confidentialite.html")){
-  console.log('politique-confi')
-  document.getElementById("fleche9").addEventListener('click',()=>{
-    if(document.getElementById("modification-description").style.display==="none"){
-      document.getElementById("modification-description").style.display="flex";
-      document.getElementById("fleche9").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("modification-description").style.display="none";
-      document.getElementById("fleche9").classList.remove("rotate")
-
-    }
-  })
-  
-
-}
-
-
-
-
-
-
-if(currentURL.includes("politique-de-confidentialite.html")){
-  console.log('politique-confi')
-  document.getElementById("fleche10").addEventListener('click',()=>{
-    if(document.getElementById("info-sup-description").style.display==="none"){
-      document.getElementById("info-sup-description").style.display="flex";
-      document.getElementById("fleche10").classList.add("rotate")
-
-
-    }
-    else{
-      document.getElementById("info-sup-description").style.display="none";
-      document.getElementById("fleche10").classList.remove("rotate")
-
-    }
-  })
-  
-
+  document.getElementById("fleche4").addEventListener('click', () => toggleDescription("vivafleurs-description","fleche4"));
+  document.getElementById("fleche5").addEventListener('click', () => toggleDescription("collecte-description","fleche5"));
+  document.getElementById("fleche6").addEventListener('click', () => toggleDescription("utilisation-description","fleche6"));
+  document.getElementById("fleche7").addEventListener('click', () => toggleDescription("protection-description","fleche7"));
+  document.getElementById("fleche8").addEventListener('click', () => toggleDescription("partage-description","fleche8"));
+  document.getElementById("fleche9").addEventListener('click', () => toggleDescription("modification-description","fleche9"));
+  document.getElementById("fleche10").addEventListener('click', () => toggleDescription("info-sup-description","fleche10"));
 }
 
 
