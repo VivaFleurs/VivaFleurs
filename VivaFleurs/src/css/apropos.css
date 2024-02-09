@@ -37,7 +37,7 @@ body{
 
     text-decoration: none;
     color: #95B475;
-    font-size:larger;
+    font-size:22px;
     padding-bottom: 5px;
     font-weight:bold;
   }
@@ -47,7 +47,7 @@ body{
     display: block;
     height: 1px;
     width: 0%;
-    background-color: #ffffff;
+    background-color: #95B475;
     position: absolute;
     transition: all ease-in-out 250ms;
 }
@@ -257,6 +257,7 @@ footer .foot-main{
 .foot-row li{
   list-style: none;
   margin: 15px 0;
+  font-size: 1.1rem;
 }
 
 .foot-row li a{

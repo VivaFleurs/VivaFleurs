@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 
 *{
@@ -38,7 +37,7 @@ body{
   .nav-links a {
     text-decoration: none;
     color: #95B475;
-    font-size:larger;
+    font-size:22px;
     padding-bottom: 5px;
     font-weight:bold;
   }
@@ -215,6 +214,7 @@ footer{
   .foot-row li{
     list-style: none;
     margin: 15px 0;
+    font-size: 1.1rem;
   }
   .foot-row li a{
     color: #ffffff;
