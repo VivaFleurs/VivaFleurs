@@ -224,10 +224,16 @@ tbody tr:nth-child(even) {
   /* DEBUT BARRE D'AJOUT */
 
 ul button {
-  background-color: #95B475;
-  color: whitesmoke;
-  height: 30px;
-  width: 60px;
+  margin-top: 10px;
+  padding: 10px 22px;
+  background: #95B475;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 button:hover {
@@ -238,7 +244,7 @@ button:hover {
 #popup-container {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
@@ -306,6 +312,25 @@ button:hover {
 }
 
 /* FIN BARRE D'AJOUT */
+
+
+
+  /*DEBUT DESIGN BOUTON*/
+  .btn{
+    
+    padding: 10px 22px;
+    background: #95B475;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+ 
+  /*Fin DESIGN BOUTON*/
+  
 
 /* DEBUT footer */
 
