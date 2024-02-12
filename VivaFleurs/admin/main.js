@@ -185,9 +185,9 @@ getProduit().then(data => {
             <td><img src="${produit.photo1}" alt="Photo 1" style="width: 100px; height: 100px;"></td>
             <td><img src="${produit.photo2}" alt="Photo 2" style="width: 100px; height: 100px;"></td>
             <td><img src="${produit.photo3}" alt="Photo 3" style="width: 100+0px; height: 100px;"></td>
-            <td><button onclick="toggleVisibilityAfficher(${produit.id_produit}, ${produit.afficher})">${produit.afficher === 1 ? 'On' : 'Off'}</button></td>
-            <td><button onclick="toggleVisibilityEvenement(${produit.id_produit}, ${produit.evenement})">${produit.evenement === 1 ? 'On' : 'Off'}</button></td>
-            <td><button onclick="supprimer(${produit.id_produit})">Supprimer</button> <button onclick="">modifier</button></td>
+            <td><button class="btn" onclick="toggleVisibilityAfficher(${produit.id_produit}, ${produit.afficher})">${produit.afficher === 1 ? 'On' : 'Off'}</button></td>
+            <td><button class="btn" onclick="toggleVisibilityEvenement(${produit.id_produit}, ${produit.evenement})">${produit.evenement === 1 ? 'On' : 'Off'}</button></td>
+            <td><button class="btn" onclick="supprimer(${produit.id_produit})">Supprimer</button> <button class="btn" onclick="">modifier</button></td>
         `).join('')}
       </tbody>
     </table>
