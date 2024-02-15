@@ -800,35 +800,52 @@ if (currentURL.includes("politique-de-confidentialite.html")) {
 
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Début map livraison 
+//Debut design js de la card de redirection dans l'index 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+document.querySelectorAll(".carousel").forEach(carousel => {
+  const items = carousel.querySelectorAll(".carousel__item");
 
+  const buttonsHTML = Array.from(items, (item, index) => {
+      const imgSrc = item.querySelector("img").src;
+      const title = item.querySelector("h2").innerText;
+      const text = item.querySelector("p").innerText;
 
-var map = L.map('map').setView([46.603354, 1.888334], 6); // Centre de la France
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-
-// Charger les données des communes depuis votre fichier JSON et ajouter des marqueurs pour chaque commune
-fetch('./json/communes-72-sarthe.json')
-  .then(response => response.json())
-  .then(data => {
-    data.forEach(commune => {
-      L.marker([commune.latitude, commune.longitude]).addTo(map)
-        .bindPopup(commune.nom);
-    });
+      return `<span class="carousel__button" data-index="${index}">
+                  
+              </span>`;
   });
 
+  carousel.insertAdjacentHTML("beforeend", `
+      <div class="carousel__nav">
+          ${buttonsHTML.join("")}
+      </div>
+  `);
 
+  const buttons = carousel.querySelectorAll(".carousel__button");
+
+  buttons.forEach((button, i) => {
+      button.addEventListener("click", () => {
+          items.forEach(item => item.classList.remove("carousel__item--selected"));
+          buttons.forEach(btn => btn.classList.remove("carousel__button--selected"));
+
+          items[i].classList.add("carousel__item--selected");
+          button.classList.add("carousel__button--selected");
+      });
+  });
+
+  // Sélection du premier item sur la page de présentation
+  items[0].classList.add("carousel__item--selected");
+  buttons[0].classList.add("carousel__button--selected");
+});
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Fin map livraison 
+//Debut design js de la card de redirection dans l'index 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
