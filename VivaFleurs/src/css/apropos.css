@@ -97,6 +97,8 @@ justify-content: space-between;
   
   .historique {
     margin-top: 3%;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background: radial-gradient(circle, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 100%);
     border-radius: 10px; /* Ajoutez la bordure arrondie souhaitée */
   }
@@ -112,9 +114,13 @@ justify-content: space-between;
 
   .historique-text h2{
     margin-top: 5%;
+    font-size: 2rem;
+
   }
   .historique-text p{
     margin-top: 2%;
+    font-size: 1.5rem;
+
   }
   
 
@@ -190,9 +196,10 @@ justify-content: space-between;
 /*Design notre objectif*/
 
 .notre-objectif{
-height: 30vh;
-background: radial-gradient(circle, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 100%);
-
+  height: 30vh;
+  background: radial-gradient(circle, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 100%);
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .notre-objectif h1{
@@ -206,6 +213,7 @@ background: radial-gradient(circle, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 
   color: #95B475;
   text-align: center;
   margin-top: 3%;
+  font-size: 1.5rem;
 }
 
 
