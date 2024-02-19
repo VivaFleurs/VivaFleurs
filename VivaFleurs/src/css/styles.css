@@ -291,14 +291,22 @@ justify-content: center;
   width: 50%;
   margin-left: 25%;
   margin-bottom: 10%;
-  background: grey;
+  background: #95B475;
   padding: 1em;
   font-weight: bold;
   font-size: 2em;
   color: #fff;
   display: none;
   border-radius: 20px;
-  box-shadow: #95B475 0px 7px 15px;
+  box-shadow: #95B475 0px 10px 20px;
+}
+
+.carousel__item img{
+  position: absolute;
+  top: 22%;
+  height: 55%;
+  width: 16%;
+  border-radius: 20px;
 }
 
 .carousel__nav{
@@ -330,17 +338,15 @@ justify-content: center;
 }
 
 
-.carousel__item h1{
+.carousel__item h2{
   text-align: right;
 }
 .carousel__item p{
+  font-size: 1.5rem;
   text-align: right; /* Aligne le texte à gauche */
 
 }
 
-.carousel__item img{
- 
-}
 /*FIN DESIGN caroussel redirection*/
 
 
@@ -356,30 +362,26 @@ footer{
 }
 
 footer .foot-main{
-  
   background: #95B475;
   display: flex;
   justify-content: space-between;
   flex: 25%;
   flex-wrap: wrap;
-  
-
-
 }
+
 .foot-row{
   padding: 20px 40px;
   margin: 20px;
-
-
 }
+
 .foot-row h4{
   color: rgb(240, 230, 230);
   margin-bottom: 20px;
   font-size: 1.6rem;
   position: relative;
   text-transform: uppercase;    
-  
 }
+
 .foot-row h4::before{
   content: "";
   position: absolute;
@@ -388,7 +390,6 @@ footer .foot-main{
   background-color: #586947;
   width: 50px;
   height: 2px;
-
 }
 
 .foot-row li{

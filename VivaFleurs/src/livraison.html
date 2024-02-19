@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" class="rel">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="./js/main.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">    
     
@@ -40,7 +42,7 @@
         </section>
     </div>
 
-    <div class="symbole-livraison">
+    <div class="symbole-livraison" data-aos="fade-right" data-aos-duration="1500">
         <div class="reçue-livraison">
             <img src="./img/demande-livraison.png" alt="Reçue Livraison">
             <span>&rarr;</span>
@@ -60,9 +62,9 @@
 
    
 
-   <h2 class="livraison">La demande de livraison s'effectue uniquement en boutique</h2>
-   <h2 class="titre">Nous livrons les localités suivantes</h2>
-   <section class="cities">
+   <h2 class="livraison" data-aos="fade-right" data-aos-duration="1500">La demande de livraison s'effectue uniquement en boutique</h2>
+   <h2 class="titre" data-aos="fade-right" data-aos-duration="1500">Nous livrons les localités suivantes</h2>
+   <section class="cities" data-aos="fade-right" data-aos-duration="1500">
         
       <div class="column">
           <p>AIGNE</p>
@@ -129,6 +131,7 @@
 
 
 
+<div data-aos="fade-right" data-aos-duration="1500">
 
    <svg
        xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -144,7 +147,8 @@
        version="1.2"
        id="svg3336"
        inkscape:version="0.91 r13725"
-       sodipodi:docname="Intercommunalités Sarthe 2017.svg">
+       sodipodi:docname="Intercommunalités Sarthe 2017.svg"
+       >
       <g
          id="g3342"
          style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel"
@@ -1323,6 +1327,7 @@
       </g>
     </svg>
     
+   </div>
 
 
 
@@ -1387,5 +1392,11 @@
 
         </div>
     </footer> 
+
+    <script>
+      AOS.init();
+    </script>
+
+
 </body>
 </html>
