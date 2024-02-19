@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" class="rel">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -38,8 +40,8 @@
         </section>
     </div>
 
-    <h2 class="form-headline">Envoyez-nous un message</h2>
-    <div class="contain">
+    <h2 data-aos="fade-right" data-aos-duration="1500" class="form-headline">Envoyez-nous un message</h2>
+    <div class="contain" data-aos="fade-right" data-aos-duration="1500">
         <div class="wrapper">
             <div class="form">
                 <h3>Contactez-nous</h3>
@@ -163,5 +165,9 @@
 
         </div>
     </footer> 
+
+    <script>
+        AOS.init();
+      </script>
     
 </body>
