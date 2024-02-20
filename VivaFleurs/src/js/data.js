@@ -2,7 +2,7 @@
 
 async function getProduit() {
     try {
-      const response = await fetch('http://localhost/BDD.php');
+      const response = await fetch('http://localhost/Stage/VivaFleurs/VivaFleurs/api/BDD.php');
       const data = await response.json();
       console.log(data)
       return data;
