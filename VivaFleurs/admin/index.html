@@ -72,52 +72,108 @@
         </ul>
     </div>
     
-<div id="popup-overlay"></div>
+    <div id="popup-overlay"></div>
 
-<div id="popup-container">
-  <div id="close-popup" onclick="closePopup()">X</div>
-  <h2>Modification de la base de donnée</h2>
-  <form  id="ajout" method="post" enctype="multipart/form-data">
+    <div id="popup-container">
+    <div id="close-popup" onclick="closePopup()">X</div>
+    <h2>Modification de la base de donnée</h2>
+    <form  id="ajout" method="post" enctype="multipart/form-data">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="description">Description image</label>
+        <textarea id="description" name="message" rows="4" required></textarea>
+
+        <label for="composition">Composition</label>
+        <textarea id="composition" name="composition" rows="4" required></textarea>
+
+        <label for="prix">Prix</label>
+        <input type="number" id="prix" name="prix" required>
+
+        <label for="entretient">Entretient</label>
+        <textarea id="entretient" name="entretient" rows="4" required></textarea>
+        
+        <label for="categorie">Catégorie</label>
+        <select id="categorie" name="categorie" required>
+            <option value="">--Please choose an option--</option>
+            <option value="1">Bouquet</option>
+            <option value="2">Fleur unique</option>
+            <option value="3">Plante</option>
+            <option value="4">Plante grasse</option>
+        </select>
+
+        <label for="file">photo 1</label>
+        <input type="file" id="image1" name="images[]" accept=".png" required>
+        
+        <label for="file">photo 2</label>
+        <input type="file" id="image2" name="images[]" accept=".png" required>
+
+        <label for="file">photo 3</label>
+        <input type="file" id="image3" name="images[]" accept=".png" required>
+
+        <input id="input-ajout" class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
+
+    </form>
+    </div>
 
 
 
-    <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" required>
 
-    <label for="description">Description image</label>
-    <textarea id="description" name="message" rows="4" required></textarea>
 
-    <label for="composition">Composition</label>
-    <textarea id="composition" name="composition" rows="4" required></textarea>
 
-    <label for="prix">Prix</label>
-    <input type="number" id="prix" name="prix" required>
 
-    <label for="entretient">Entretient</label>
-    <textarea id="entretient" name="entretient" rows="4" required></textarea>
-    
-    <label for="categorie">Catégorie</label>
-    <select id="categorie" name="categorie" required>
-        <option value="">--Please choose an option--</option>
-        <option value="1">Bouquet</option>
-        <option value="2">Fleur unique</option>
-        <option value="3">Plante</option>
-        <option value="4">Plante grasse</option>
-    </select>
 
-    <label for="file">photo 1</label>
-    <input type="file" accept=".png" required>
-    
-    <label for="file">photo 2</label>
-    <input type="file" accept=".png" required>
+    <!-- FORM de modif -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <form id="form-modification">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom-modif" name="nom-modif" >
+          
+            <label for="description">Description :</label>
+            <textarea id="description-modif" name="description-modif" ></textarea>
+          
+            <label for="composition">Composition :</label>
+            <input type="text" id="composition-modif" name="composition-modif" >
+          
+            <label for="prix">Prix :</label>
+            <input type="number" id="prix-modif" name="prix-modif" >
+          
+            <label for="entretien">Entretien :</label>
+            <input type="text" id="entretien-modif" name="entretien-modif" >
+          
+            <label for="categorie-modif">Catégorie :</label>
+            <select id="categorie-modif" name="categorie-modif">
+                <option value="1">Bouquet</option>
+                <option value="2">Fleur unique</option>
+                <option value="3">Plante</option>
+                <option value="4">Plante grasse</option>
+            </select>
 
-    <label for="file">photo 3</label>
-    <input type="file" accept=".png" required>
+            <label for="file">photo 1</label>
+            <input type="file" id="photo1-modif-btn" name="images[]" accept=".png" >
+            <img src="" alt="" id="photo1-modif">
+            
+            <label for="file">photo 2</label>
+            <input type="file" id="photo2-modif-btn" name="images[]" accept=".png" >
+            <img src="" alt="" id="photo2-modif">
 
-    <input class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
+            <label for="file">photo 3</label>
+            <input type="file" id="photo3-modif-btn" name="images[]" accept=".png" >
+            <img src="" alt="" id="photo3-modif">
 
-  </form>
-</div>
+            <input type="text" id="id_produit" value="" hidden>
+            
+
+          
+            <button type="submit" onclick="modifierProduit()">Modifier</button>
+          </form>
+        </div>
+    </div>
+
+
+
 
 
     <div class="row"><img id="gif" src="../src/img/Loading.gif" alt="Loading"></div>
