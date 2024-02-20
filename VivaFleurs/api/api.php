@@ -300,7 +300,47 @@ function modifierProduit($id,$nom, $description, $composition, $prix, $entretien
 }
 
 
+function modifierEvent($image, $titre, $paragraphe ){
+    global $mysqli;
 
+    
+    $stmt = $mysqli->prepare("UPDATE evenement SET `image` = ?, `titre` = ?, `paragraphe` = ? WHERE id_event = 1;");
+    $stmt->bind_param("sss",$image, $titre, $paragraphe);
+    if($stmt->execute()){
+        $stmt->close();
+        echo json_encode(['success' => true]);
+    }else{
+        error_log('Erreur lors de l\'exécution de la requête UPDATE : ' . $stmt->error);
+        echo json_encode(['error' => 'Erreur lors du changement de la page event']);
+    }
+}
+
+function viewEvent(){
+    global $mysqli;
+
+
+    $stmt_view = $mysqli->prepare("SELECT * FROM evenement");
+    if($stmt_view->execute()){
+        $stmt_view->bind_result($image, $titre, $paragraphe);
+
+        $results = array();
+        
+        while ($stmt_view->fetch()) {
+            $results[] = array(
+                'image' => $image,
+                'titre' => $titre,
+                'paragraphe' => $paragraphe
+            );
+        }
+        
+        $stmt_view->close();
+        
+        echo json_encode($results);
+    }else{
+        error_log('Erreur lors de l\'exécution de la requête UPDATE : ' . $stmt->error);
+        echo json_encode(['error' => 'Erreur lors du changement de la page event']);
+    }
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = isset($_POST['action']) ? $_POST['action'] : '';
@@ -334,6 +374,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
         case 'supprimerProduit':
             supprimerProduit($_POST['id']);
+            break;
+        case 'modifierEvent':
+            modifierEvent($_POST['image'],$_POST['titre'],$_POST['paragraphe']);
+            break;
+        case 'viewEvent':
+            viewEvent();
             break;
         case 'modifierProduit':
 

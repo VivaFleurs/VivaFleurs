@@ -8,7 +8,7 @@ function sendCode() {
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/vivafleur/api/api.php',
+    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php',
     data: {
       action: 'generateCode',
       email: email,
@@ -30,7 +30,7 @@ function verifyCode() {
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/vivafleur/api/api.php', 
+    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
     data: {
       action: 'verifyCode',
       code: code
@@ -85,7 +85,7 @@ function ajoutProduit() {
   }
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/vivafleur/api/api.php', 
+    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
     data: formData,
     processData: false,
     contentType: false,
@@ -139,78 +139,136 @@ function closePopup() {
 
 
 
-
-async function getProduit() {
-  try {
-    const response = await fetch('http://localhost/vivafleur/api/BDD.php');
-    const data = await response.json();
-    
-    // Traiter les données reçues       
-    return data;
-  } catch (error) {
-    console.error('Erreur lors de la récupération des données', error);
-    throw error; // Pour propager l'erreur à l'appelant, si nécessaire
+var currentURL = window.location.href;
+if (currentURL.includes("")) {
+  async function getProduit() {
+    try {
+      const response = await fetch('http://localhost/vivafleur/api/BDD.php');
+      const data = await response.json();
+      
+      // Traiter les données reçues       
+      return data;
+    } catch (error) {
+      console.error('Erreur lors de la récupération des données', error);
+      throw error; // Pour propager l'erreur à l'appelant, si nécessaire
+    }
   }
+
+
+  getProduit().then(data => {
+
+      const tableauHTML = `
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Composotion</th>
+            <th>Prix</th>
+            <th>Entretien</th>
+            <th>Categorie</th>
+            <th>Photo 1</th>
+            <th>Photo 2</th>
+            <th>Photo 3</th>
+            <th>Afficher</th>
+            <th>Événement</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.map(produit => `
+            <tr>
+              <td>${produit.nom}</td>
+              <td>${produit.description}</td>
+              <td>${produit.composition}</td>
+              <td>${produit.prix}€</td>
+              <td>${produit.entretien}</td>
+              <td>${produit.categorie}</td>
+              <td><img src="${produit.photo1}" alt="Photo 1" style="width: 100px; height: 100px;"></td>
+              <td><img src="${produit.photo2}" alt="Photo 2" style="width: 100px; height: 100px;"></td>
+              <td><img src="${produit.photo3}" alt="Photo 3" style="width: 100+0px; height: 100px;"></td>
+              <td><button class="btn" onclick="toggleVisibilityAfficher(${produit.id_produit}, ${produit.afficher})">${produit.afficher === 1 ? 'On' : 'Off'}</button></td>
+              <td><button class="btn" onclick="toggleVisibilityEvenement(${produit.id_produit}, ${produit.evenement})">${produit.evenement === 1 ? 'On' : 'Off'}</button></td>
+              <td><button class="btn" onclick="supprimer(${produit.id_produit})">Supprimer</button> <button class="btn" onclick="modifier(${produit.id_produit})">modifier</button></td>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+
+    
+
+      // Injecter le tableau HTML dans l'élément avec l'ID "resultat"
+      document.getElementById('container').innerHTML = tableauHTML;
+
+      // Masquer l'élément avec l'ID "gif"
+      document.getElementById('gif').style.display = "none";
+  });
+
+
+
+  // Creation formulaire au clic sur d'ajout
+  document.getElementById('ajout').addEventListener("submit", async (e) => {
+    e.preventDefault();
+  });
+
+  document.getElementById('form-modification').addEventListener("submit", async (e) => {
+    e.preventDefault();
+  });
+
+  document.getElementById('form-event').addEventListener("submit", async (e) => {
+    e.preventDefault();
+  });
+}
+
+
+function modifierEvent(){
+  img = document.getElementById('id-img').value;
+  h1 = document.getElementById('id-h1').value;
+  p = document.getElementById('id-p').value;
+  var formData = new FormData();
+  formData.append('action', 'modifierEvent');
+  formData.append('image', img);
+  formData.append('titre', h1);
+  formData.append('paragraphe', p);
+  
+  for (var pair of formData.entries()) {
+    console.log(pair[0] + ': ' + pair[1]);
+  }
+
+
+
+
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function(response) {
+      console.log(response.success)
+      if (response.success) {
+        alert("Event modifié avec succés !");
+        //location.reload();
+        
+      }
+    },
+    error: function(error) {
+      console.error('Erreur lors de la modification de la page event :', error);
+    }
+  });
 }
 
 
 
 
-getProduit().then(data => {
 
-    const tableauHTML = `
-    <table>
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Description</th>
-          <th>Composotion</th>
-          <th>Prix</th>
-          <th>Entretien</th>
-          <th>Categorie</th>
-          <th>Photo 1</th>
-          <th>Photo 2</th>
-          <th>Photo 3</th>
-          <th>Afficher</th>
-          <th>Événement</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${data.map(produit => `
-          <tr>
-            <td>${produit.nom}</td>
-            <td>${produit.description}</td>
-            <td>${produit.composition}</td>
-            <td>${produit.prix}€</td>
-            <td>${produit.entretien}</td>
-            <td>${produit.categorie}</td>
-            <td><img src="${produit.photo1}" alt="Photo 1" style="width: 100px; height: 100px;"></td>
-            <td><img src="${produit.photo2}" alt="Photo 2" style="width: 100px; height: 100px;"></td>
-            <td><img src="${produit.photo3}" alt="Photo 3" style="width: 100+0px; height: 100px;"></td>
-            <td><button class="btn" onclick="toggleVisibilityAfficher(${produit.id_produit}, ${produit.afficher})">${produit.afficher === 1 ? 'On' : 'Off'}</button></td>
-            <td><button class="btn" onclick="toggleVisibilityEvenement(${produit.id_produit}, ${produit.evenement})">${produit.evenement === 1 ? 'On' : 'Off'}</button></td>
-            <td><button class="btn" onclick="supprimer(${produit.id_produit})">Supprimer</button> <button class="btn" onclick="modifier(${produit.id_produit})">modifier</button></td>
-        `).join('')}
-      </tbody>
-    </table>
-  `;
-
-  
-
-    // Injecter le tableau HTML dans l'élément avec l'ID "resultat"
-    document.getElementById('container').innerHTML = tableauHTML;
-
-    // Masquer l'élément avec l'ID "gif"
-    document.getElementById('gif').style.display = "none";
-});
 
 
 function toggleVisibilityAfficher(productId, currentStatus) {
   if (currentStatus === 1) {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/vivafleur/api/api.php', 
+      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityAfficher',
         id: productId,
@@ -232,7 +290,7 @@ function toggleVisibilityAfficher(productId, currentStatus) {
   } else {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/vivafleur/api/api.php', 
+      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityAfficher',
         id: productId,
@@ -260,7 +318,7 @@ function toggleVisibilityEvenement(productId, currentStatus) {
   if (currentStatus === 1) {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/vivafleur/api/api.php', 
+      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityEvenement',
         id: productId,
@@ -282,7 +340,7 @@ function toggleVisibilityEvenement(productId, currentStatus) {
   } else {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/vivafleur/api/api.php', 
+      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityEvenement',
         id: productId,
@@ -308,7 +366,7 @@ function toggleVisibilityEvenement(productId, currentStatus) {
 function supprimer(productId){
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/vivafleur/api/api.php', 
+    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
     data: {
       action: 'supprimerProduit',
       id: productId
@@ -441,14 +499,10 @@ function modifierProduit(){
 
 
 
-  for (var pair of formData.entries()) {
-    console.log(pair[0] + ': ' + pair[1]);
-  }
-
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/vivafleur/api/api.php', 
+    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
     data: formData,
     processData: false,
     contentType: false,
@@ -477,19 +531,6 @@ function closeModal() {
 
 
 
-
-// Creation formulaire au clic sur d'ajout
-document.getElementById('ajout').addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-
-});
-
-document.getElementById('form-modification').addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-
-});
 
 
 

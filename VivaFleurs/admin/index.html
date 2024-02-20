@@ -75,45 +75,45 @@
     <div id="popup-overlay"></div>
 
     <div id="popup-container">
-    <div id="close-popup" onclick="closePopup()">X</div>
-    <h2>Modification de la base de donnée</h2>
-    <form  id="ajout" method="post" enctype="multipart/form-data">
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" required>
+        <div id="close-popup" onclick="closePopup()">X</div>
+        <h2>Modification de la base de donnée</h2>
+        <form  id="ajout" method="post" enctype="multipart/form-data">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
 
-        <label for="description">Description image</label>
-        <textarea id="description" name="message" rows="4" required></textarea>
+            <label for="description">Description image</label>
+            <textarea id="description" name="message" rows="4" required></textarea>
 
-        <label for="composition">Composition</label>
-        <textarea id="composition" name="composition" rows="4" required></textarea>
+            <label for="composition">Composition</label>
+            <textarea id="composition" name="composition" rows="4" required></textarea>
 
-        <label for="prix">Prix</label>
-        <input type="number" id="prix" name="prix" required>
+            <label for="prix">Prix</label>
+            <input type="number" id="prix" name="prix" required>
 
-        <label for="entretient">Entretient</label>
-        <textarea id="entretient" name="entretient" rows="4" required></textarea>
-        
-        <label for="categorie">Catégorie</label>
-        <select id="categorie" name="categorie" required>
-            <option value="">--Please choose an option--</option>
-            <option value="1">Bouquet</option>
-            <option value="2">Fleur unique</option>
-            <option value="3">Plante</option>
-            <option value="4">Plante grasse</option>
-        </select>
+            <label for="entretient">Entretient</label>
+            <textarea id="entretient" name="entretient" rows="4" required></textarea>
+            
+            <label for="categorie">Catégorie</label>
+            <select id="categorie" name="categorie" required>
+                <option value="">--Please choose an option--</option>
+                <option value="1">Bouquet</option>
+                <option value="2">Fleur unique</option>
+                <option value="3">Plante</option>
+                <option value="4">Plante grasse</option>
+            </select>
 
-        <label for="file">photo 1</label>
-        <input type="file" id="image1" name="images[]" accept=".png" required>
-        
-        <label for="file">photo 2</label>
-        <input type="file" id="image2" name="images[]" accept=".png" required>
+            <label for="file">photo 1</label>
+            <input type="file" id="image1" name="images[]" accept=".png" required>
+            
+            <label for="file">photo 2</label>
+            <input type="file" id="image2" name="images[]" accept=".png" required>
 
-        <label for="file">photo 3</label>
-        <input type="file" id="image3" name="images[]" accept=".png" required>
+            <label for="file">photo 3</label>
+            <input type="file" id="image3" name="images[]" accept=".png" required>
 
-        <input id="input-ajout" class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
+            <input id="input-ajout" class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
 
-    </form>
+        </form>
     </div>
 
 
@@ -177,7 +177,21 @@
 
 
     <div class="row"><img id="gif" src="../src/img/Loading.gif" alt="Loading"></div>
-    <div id="container" class="row"></div>   
+    <div id="container" class="row"></div>  
+    <br>
+    <h2>Modifier les événements</h2>
+    <form id="form-event" method="post">
+        <label for="id-img">Image :</label>
+        <input type="text" id="id-img" name="id-img" placeholder="Lien d'une image"><br><br>
+        
+        <label for="id-h1">Titre :</label>
+        <input type="text" id="id-h1" name="id-h1" placeholder="Titre de l'événement"><br><br>
+
+        <label for="id-p">Description :</label>
+        <input type="text" id="id-p" name="id-p" placeholder="Description de l'événement"><br><br>
+
+        <input type="submit" onclick="modifierEvent()" value="Modifier">
+    </form> 
 
       <footer class="foot-col">
         <div class="foot-main">

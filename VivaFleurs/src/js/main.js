@@ -169,6 +169,30 @@ if (currentURL.includes("bouquet.html")) {
 
 if (currentURL.includes("evenement.html")) {
 
+
+  var formData = new FormData();
+  formData.append('action', 'viewEvent');
+
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function(response) {
+      console.log(response.image)
+      console.log(response.titre)
+      console.log(response.paragraphe)
+      if (response.success) {
+        //location.reload();
+        
+      }
+    },
+    error: function(error) {
+      console.error('Erreur lors de l\'affichage de la page event :', error);
+    }
+  });
+
   var evenementContainer = document.getElementById('container-evenement');
 
 
