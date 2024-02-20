@@ -321,7 +321,7 @@ function viewEvent(){
 
     $stmt_view = $mysqli->prepare("SELECT * FROM evenement");
     if($stmt_view->execute()){
-        $stmt_view->bind_result($image, $titre, $paragraphe);
+        $stmt_view->bind_result($id,$image, $titre, $paragraphe);
 
         $results = array();
         

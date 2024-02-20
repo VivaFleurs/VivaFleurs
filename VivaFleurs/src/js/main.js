@@ -180,13 +180,14 @@ if (currentURL.includes("evenement.html")) {
     processData: false,
     contentType: false,
     success: function(response) {
-      console.log(response.image)
-      console.log(response.titre)
-      console.log(response.paragraphe)
-      if (response.success) {
-        //location.reload();
-        
-      }
+      console.log(response[0]);
+      var imageUrl = response[0].image;
+      var titre = response[0].titre;
+      var paragraphe = response[0].paragraphe;
+      document.getElementById('event-img').src = imageUrl;
+      document.getElementById('event-h1').innerText = titre;
+      document.getElementById('event-p').innerText = paragraphe;
+
     },
     error: function(error) {
       console.error('Erreur lors de l\'affichage de la page event :', error);
