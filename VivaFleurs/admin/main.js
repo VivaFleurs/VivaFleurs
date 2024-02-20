@@ -8,7 +8,7 @@ function sendCode() {
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php',
+    url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php',
     data: {
       action: 'generateCode',
       email: email,
@@ -30,7 +30,7 @@ function verifyCode() {
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+    url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
     data: {
       action: 'verifyCode',
       code: code
@@ -85,7 +85,7 @@ function ajoutProduit() {
   }
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+    url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
     data: formData,
     processData: false,
     contentType: false,
@@ -122,6 +122,15 @@ function closePopup() {
 }
 
 
+function openPopupModifierEvent(){
+  document.getElementById('popup-ModifEvenement-container').style.display='block';
+  document.getElementById('popup-ModifEvenement-overlay').style.display = 'block';
+}
+
+function closePopupModifEvenement(){
+  document.getElementById('popup-ModifEvenement-container').style.display = 'none';
+  document.getElementById('popup-ModifEvenement-overlay').style.display = 'none';
+}
 
 
 
@@ -136,23 +145,25 @@ function closePopup() {
 
 
 
+async function getProduit() {
+  try {
+    const response = await fetch('http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/BDD.php');
+    const data = await response.json();
+    
+    // Traiter les données reçues       
+    return data;
+  } catch (error) {
+    console.error('Erreur lors de la récupération des données', error);
+    throw error; // Pour propager l'erreur à l'appelant, si nécessaire
+  }
+}
 
 
 
 var currentURL = window.location.href;
+
 if (currentURL.includes("")) {
-  async function getProduit() {
-    try {
-      const response = await fetch('http://localhost/vivafleur/api/BDD.php');
-      const data = await response.json();
-      
-      // Traiter les données reçues       
-      return data;
-    } catch (error) {
-      console.error('Erreur lors de la récupération des données', error);
-      throw error; // Pour propager l'erreur à l'appelant, si nécessaire
-    }
-  }
+ 
 
 
   getProduit().then(data => {
@@ -240,7 +251,7 @@ function modifierEvent(){
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+    url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
     data: formData,
     processData: false,
     contentType: false,
@@ -268,7 +279,7 @@ function toggleVisibilityAfficher(productId, currentStatus) {
   if (currentStatus === 1) {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+      url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityAfficher',
         id: productId,
@@ -290,7 +301,7 @@ function toggleVisibilityAfficher(productId, currentStatus) {
   } else {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+      url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityAfficher',
         id: productId,
@@ -318,7 +329,7 @@ function toggleVisibilityEvenement(productId, currentStatus) {
   if (currentStatus === 1) {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+      url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityEvenement',
         id: productId,
@@ -340,7 +351,7 @@ function toggleVisibilityEvenement(productId, currentStatus) {
   } else {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+      url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
       data: {
         action: 'toggleVisibilityEvenement',
         id: productId,
@@ -366,7 +377,7 @@ function toggleVisibilityEvenement(productId, currentStatus) {
 function supprimer(productId){
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+    url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
     data: {
       action: 'supprimerProduit',
       id: productId
@@ -502,7 +513,7 @@ function modifierProduit(){
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/Stage/VivaFleurs/VivaFleurs/api/api.php', 
+    url: 'http://localhost/VivaFleurs/VivaFleurs/VivaFleurs/api/api.php', 
     data: formData,
     processData: false,
     contentType: false,
