@@ -147,16 +147,18 @@ justify-content: space-between;
     width: 30px; /* Ajustez la taille du cercle selon vos besoins */
     height: 30px; /* Ajustez la taille du cercle selon vos besoins */
 }
-  
-  .none{
-    display: none;
-  }
-  
-  .rotate {
-    transform: rotate(-270deg); /* Initial rotation angle */
-  }
-  
-  
+.none{
+  display: none;
+}
+
+.rotate {
+  transform: rotate(90deg); /* Initial rotation angle */
+}
+
+.rotate::after {
+  transform: rotate(-90deg); /* Initial rotation angle */
+}
+ 
   
   
   

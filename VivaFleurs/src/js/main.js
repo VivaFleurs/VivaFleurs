@@ -824,9 +824,9 @@ Que ce soit pour une occasion spéciale ou simplement pour faire plaisir à un �
 
 
     document.getElementById('arrow3').addEventListener("click",()=>{
-      if(document.getElementById('stocks2-description').style.display==='none')
+      if(document.getElementById('stocks3-description').style.display==='none')
       {
-        document.getElementById('stocks2-description').style.display='flex'
+        document.getElementById('stocks3-description').style.display='flex'
         document.getElementById('arrow3').style.transform='rotate(-90deg)'
       }
      else {
