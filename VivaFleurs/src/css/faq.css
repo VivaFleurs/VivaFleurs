@@ -157,13 +157,20 @@ h3 {
 }
 
 .arrow::after {
-  content: "\276f"; 
-  transform: rotate(0deg);
+  content: "\276f";
   font-size: 20px; 
   color: black;
   margin-left: 10px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #95B475;
+  width: 30px; /* Ajustez la taille du cercle selon vos besoins */
+  height: 30px; /* Ajustez la taille du cercle selon vos besoins */
 }
 
 .none{
@@ -175,7 +182,7 @@ h3 {
 }
 
 .rotate::after {
-  transform: rotate(-90deg); /* Initial rotation angle */
+  transform: rotate(0deg); /* Initial rotation angle */
 }
 
 
