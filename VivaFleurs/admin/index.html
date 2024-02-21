@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">    
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
     <script src="main.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -18,10 +19,10 @@
         <img src="../src/img/Viva Fleurs.png" alt="Logo">
         </div>
         <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="#">Catalogue</a></li>
-          <li><a href="livraison.html">Livraison</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="../src/index.html">Accueil</a></li>
+          <li><a href="../src/catalogue.html">Catalogue</a></li>
+          <li><a href="../src/livraison.html">Livraison</a></li>
+          <li><a href="../src/contact.html">Contact</a></li>
         </ul>
     </nav>
       
@@ -33,12 +34,10 @@
     </div>
 
 
-<!-- 
 
+    <div id="popup-connect-overlay"></div>
 
-    <div id="popup-overlay"></div>
-
-    <div id="popup-container">
+    <div id="popup-connect">
       <h2>Connexion</h2>
       <form id="login-form">
         <label for="email">E-mail :</label>
@@ -58,7 +57,6 @@
       </div>
     </div>
 
- -->
 
 
 
@@ -112,7 +110,7 @@
             <label for="file">photo 3</label>
             <input type="file" id="image3" name="images[]" accept=".png" required>
 
-            <input id="input-ajout" class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
+            <input class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
 
         </form>
     </div>
@@ -133,7 +131,7 @@
             <label for="id-p">Description :</label>
             <input type="text" id="id-p" name="id-p" placeholder="Description de l'événement"><br><br>
            
-            <input id="input-ajout" class="envoyer"  onclick="ajoutProduit()" type="submit" value="Envoyer">
+            <input class="envoyer"  onclick="modifierEvent()" type="submit" value="Envoyer">
 
         </form>
     </div>
@@ -186,7 +184,7 @@
             <input type="file" id="photo3-modif-btn" name="images[]" accept=".png" >
             <img src="" alt="" id="photo3-modif">
 
-            <input type="text" id="id_produit" value="" hidden>
+            <input hidden type="text" id="id_produit" value="" >
             
 
           
@@ -208,11 +206,11 @@
             <div class="foot-row">
                 <h4>Liens de redirection</h4>
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="#">Catalogue</a></li>            
-                    <li><a href="livraison.html">Livraison</a></li>  
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="apropos.html">A propos de</a></li>         
+                    <li><a href="../src/index.html">Accueil</a></li>
+                    <li><a href="../src/catalogue.html">Catalogue</a></li>            
+                    <li><a href="../src/livraison.html">Livraison</a></li>  
+                    <li><a href="../src/contact.html">Contact</a></li>
+                    <li><a href="../src/apropos.html">A propos de</a></li>         
                 </ul>
             </div>
     
@@ -220,23 +218,23 @@
             <div class="foot-row">
                 <h4>Légal</h4>
                 <ul>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                    <li><a href="#">Mention légal</a></li>      
+                    <li><a href="../src/politique-de-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="../src/mention-legal.html">Mention légal</a></li>      
                 </ul>
             </div>
           
             
             <div class="foot-row">
                 <div class="social-icon">
-                <h4>Réseaux sociaux</h4>
-                <ul>
-                    <a href="https://www.facebook.com/asso.esportline/?locale=fr_FR"><li><i class="fab fa-facebook"></i></li></a>
-                    <a href="https://www.instagram.com/esportline_asso/"><li><i class="fab fa-instagram"></i></li></a>
-                    <a href="https://x.com/eSport_Line_?s=20"><li><i class="fab fa-twitter"></i></li></a>
-                    <a href="mailto:esportline.asso@gmail.com"><li><i class="fab fa-google-plus-g"></i></li></a>
-    
-                    
-                </ul>
+                    <h4>Réseaux sociaux</h4>
+                    <ul>
+                        <a href="https://www.facebook.com/asso.esportline/?locale=fr_FR"><li><i class="fab fa-facebook"></i></li></a>
+                        <a href="https://www.instagram.com/esportline_asso/"><li><i class="fab fa-instagram"></i></li></a>
+                        <a href="https://x.com/eSport_Line_?s=20"><li><i class="fab fa-twitter"></i></li></a>
+                        <a href="mailto:esportline.asso@gmail.com"><li><i class="fab fa-google-plus-g"></i></li></a>
+        
+                        
+                    </ul>
                 </div>
             </div>
     
@@ -246,6 +244,14 @@
                 <div class="gps">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10677.50156196755!2d0.19136496832242988!3d48.00645699399204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28f2955441973%3A0x9acec2fa3df254c5!2sViva%20Fleurs!5e0!3m2!1sfr!2sfr!4v1704968614948!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+            </div>
+
+            <div class="foot-row">
+                <h4>FAQ</h4>
+                <ul>
+                    <li><a href="../src/faq.html">Nos réponses à vos questions</a></li>
+                </ul>
+                
             </div>
     
     

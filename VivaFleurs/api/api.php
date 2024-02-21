@@ -29,7 +29,7 @@ function generateCode($email,$pwd) {
     if ($stmt->execute()) {
 
         $from = "enzo.tessier72@gmail.com";
-        $to = "enzo.tessier@bts-malraux.net";
+        $to = $email;
         $subject = "sujet test 1";
         $message = "123456";
         $headers = "De :" . $from;
@@ -52,11 +52,14 @@ function verifyCode($code) {
     $stmt = $mysqli->prepare("SELECT id FROM codes WHERE code = ? AND status = 0");
     $stmt->bind_param("s", $code);
     $stmt->execute();
+    $stmt->store_result();
+    
 
     if ($stmt->num_rows > 0) {
         $stmt->close();
-        $updateStmt = $mysqli->prepare("UPDATE codes SET status = 1 WHERE code = ?");
-        $updateStmt->bind_param("s", $code);
+        $id = 1;
+        $updateStmt = $mysqli->prepare("UPDATE codes SET status = 1 WHERE id = ?");
+        $updateStmt->bind_param("s", $id);
         if ($updateStmt->execute()) {
             $updateStmt->close();
             echo json_encode(['success' => true]);
@@ -256,7 +259,7 @@ function modifierProduit($id,$nom, $description, $composition, $prix, $entretien
     $afficher = "1";
     $evenement = "0";
 
-    if($photo1 != 0 && $photo2 != 0 && $photo3 != 0 ){
+    if($photo1 != 0 || $photo2 != 0 || $photo3 != 0 ){
 
         if($photo1 == 0 && $photo2 != 0 && $photo3 != 0){
             $stmt_photo2 = $mysqli->prepare("UPDATE `photo` SET `photo2`=?,`photo3`=? WHERE `id_photo`=?");
@@ -274,8 +277,11 @@ function modifierProduit($id,$nom, $description, $composition, $prix, $entretien
             $stmt_photo2 = $mysqli->prepare("UPDATE `photo` SET `photo2`=? WHERE `id_photo`=?");
             $stmt_photo2->bind_param("ss", $photo2, $id_photo);
         }else if($photo1 != 0 && $photo2 == 0 && $photo3 == 0){
-            $stmt_photo2 = $mysqli->prepare("UPDATE `photo` SET `photo1`=?, WHERE `id_photo`=?");
+            $stmt_photo2 = $mysqli->prepare("UPDATE `photo` SET `photo1`=? WHERE `id_photo`=?");
             $stmt_photo2->bind_param("ss", $photo1, $id_photo);
+        }else if($photo1 != 0 && $photo2 != 0 && $photo3 != 0){
+            $stmt_photo2 = $mysqli->prepare("UPDATE `photo` SET `photo1`=?, `photo2`=?, `photo3`=? WHERE `id_photo`=?");
+            $stmt_photo2->bind_param("ssss", $photo1, $photo2, $photo3, $id_photo);
         }
         
         
@@ -395,7 +401,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $file_tmp = $_FILES['images']['tmp_name'][$j];
                         $destination = '../images/' . $file_name;
                         move_uploaded_file($file_tmp, $destination);
-                        $images[$i] = 'http://localhost/vivafleur/images/' . $file_name;
+                        $images[$i] = 'http://localhost/Stage/VivaFleurs/VivaFleurs/images/' . $file_name;
                         $j++;
                     }
                 } else {
