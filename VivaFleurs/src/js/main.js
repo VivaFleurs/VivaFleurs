@@ -180,7 +180,6 @@ if (currentURL.includes("evenement.html")) {
     processData: false,
     contentType: false,
     success: function(response) {
-      console.log(response[0]);
       var imageUrl = response[0].image;
       var titre = response[0].titre;
       var paragraphe = response[0].paragraphe;
@@ -261,7 +260,7 @@ if (currentURL.includes("evenement.html")) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 if(currentURL.includes("livraison.html")){
-  console.log('coucou')
+
 
 
 }
@@ -297,7 +296,7 @@ if(currentURL.includes("livraison.html")){
 
 
   if(currentURL.includes("faq.html")){
-    console.log('coucou')
+
     document.getElementById('livraison').addEventListener("click",()=>{
       document.getElementById('faq-content').innerHTML=`
       
@@ -393,7 +392,6 @@ if(currentURL.includes("livraison.html")){
 
 
 if(currentURL.includes("faq.html")){
-  console.log('information générale')
   document.getElementById('info-general').addEventListener("click",()=>{
     document.getElementById('faq-content').innerHTML=`
     
@@ -505,7 +503,7 @@ if(currentURL.includes("faq.html")){
 
 
 if(currentURL.includes("faq.html")){
-  console.log('bouquet')
+
   document.getElementById('bouquet').addEventListener("click",()=>{
     document.getElementById('faq-content').innerHTML=`
     
@@ -610,7 +608,7 @@ if(currentURL.includes("faq.html")){
 
 
 if(currentURL.includes("faq.html")){
-  console.log('bouquet')
+
   document.getElementById('plantes').addEventListener("click",()=>{
     document.getElementById('faq-content').innerHTML=`
     
@@ -740,7 +738,7 @@ if(currentURL.includes("faq.html")){
 
 
 if(currentURL.includes("faq.html")){
-  console.log('bouquet')
+
   document.getElementById('stocks').addEventListener("click",()=>{
     document.getElementById('faq-content').innerHTML=`
     
@@ -861,9 +859,6 @@ Que ce soit pour une occasion spéciale ou simplement pour faire plaisir à un �
 if (currentURL.includes("mention-legal.html")) {
 
 
-
-  console.log('cocoucoucouc');
-
   const toggleDescription = (id_p, id_span) => {
     const element = document.getElementById(id_p);
 
@@ -902,7 +897,6 @@ if (currentURL.includes("politique-de-confidentialite.html")) {
 
 
 
-  console.log('cocoucoucouc');
 
   const toggleDescription = (id_p, id_span) => {
     const element = document.getElementById(id_p);

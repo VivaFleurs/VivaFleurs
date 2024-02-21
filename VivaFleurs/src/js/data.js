@@ -4,7 +4,6 @@ async function getProduit() {
     try {
       const response = await fetch('http://localhost/Stage/VivaFleurs/VivaFleurs/api/BDD.php');
       const data = await response.json();
-      console.log(data)
       return data;
     } catch (error) {
       console.error('Erreur lors de la récupération des données', error);
