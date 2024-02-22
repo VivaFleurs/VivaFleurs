@@ -285,8 +285,7 @@ justify-content: center;
 .carousel{
   position: relative;
 }
-
-.carousel__item{
+.carousel__item {
   height: 250px;
   width: 50%;
   margin-left: 25%;
@@ -299,13 +298,15 @@ justify-content: center;
   display: none;
   border-radius: 20px;
   box-shadow: #95B475 0px 10px 20px;
+  opacity: 0;
+  transition: opacity 0.5s linear, transform 0.5s ease; /* Ajout de la transition pour l'opacité et la transformation */
 }
 
 .carousel__item img{
   position: absolute;
   top: 22%;
   height: 55%;
-  width: 16%;
+  width: 25%;
   border-radius: 20px;
 }
 
@@ -326,25 +327,28 @@ justify-content: center;
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
+
+
 }
 
 .carousel__button--selected{
   background: rgba(255,255, 255, 0.5);
 }
 
-.carousel__item--selected{
+.carousel__item--selected {
   display: block;
-
+  opacity: 1;
+  transform: scale(1); /* Mettre à l'échelle à 1 pour afficher l'élément */
 }
 
 
 .carousel__item h2{
   text-align: right;
 }
+
 .carousel__item p{
   font-size: 1.5rem;
   text-align: right; /* Aligne le texte à gauche */
-
 }
 
 /*FIN DESIGN caroussel redirection*/

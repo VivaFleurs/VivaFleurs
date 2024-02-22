@@ -958,6 +958,7 @@ document.querySelectorAll(".carousel").forEach(carousel => {
       </div>
   `);
 
+
   const buttons = carousel.querySelectorAll(".carousel__button");
 
   buttons.forEach((button, i) => {

@@ -1,28 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.google.com/specimen/Diphylleia?subset=latin&noto.script=Kore&preview.text=bonjour');
+
 *{
     margin: 0%;
     list-style: none;
     text-decoration: none;
-    box-sizing: border-box;
 }
 
 body{
   font-family: 'Josefin Sans', sans-serif;
 }
 
-/*NAVBAR*/
-
-/* Style pour la barre de navigation */
 .navbar {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-  }
-
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   
+}
 
-  
   .navbar img{
     max-width: 50px; /* Ajustez la taille du logo */
   }
@@ -39,14 +36,12 @@ body{
   }
   
   .nav-links a {
-
     text-decoration: none;
     color: #95B475;
     font-size:22px;
     padding-bottom: 5px;
     font-weight:bold;
   }
-
   .nav-links li a::after {
     content: "";
     display: block;
@@ -60,6 +55,37 @@ body{
 
 .nav-links li a:hover::after{
     width: 100%;
+}
+
+
+.welcome-display {
+  display: flex;
+  justify-content: center; /* Centre horizontalement le contenu */
+  align-items: center; /* Centre verticalement le contenu */
+  height: 100vh; /* Ajuste la hauteur selon tes besoins */
+}
+
+.entreprise-text {
+  font-size: 2.5rem;
+  font-family: 'Caprasimo', serif;
+  color: whitesmoke;
+  text-align: center; /* Centre le texte horizontalement */
+  position: absolute; /* Position absolue pour le centrer dans l'image */
+  top: 55%; /* Déplace le haut du texte à 50% de la hauteur de l'image */
+  left: 50%; /* Déplace la gauche du texte à 50% de la largeur de l'image */
+  transform: translate(-50%, -50%); /* Centre le texte avec une translation */
+}
+
+.image-banner img {
+  height: 600px;
+  width: 600px;
+  margin: 0 30px;
+}
+
+.container-first-page{
+
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,250,200,1) 11%, rgba(176,205,147,1) 56%, rgba(149,180,117,1) 100%);
+
 }
 
 
