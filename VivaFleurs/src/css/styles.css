@@ -88,6 +88,37 @@ body{
 
 }
 
+/*TEXT ARRIVE SITE*/
+.text-arrivé{
+  color: #95B475;
+}
+
+.paragraphe-arrivé{
+  text-align: center;
+  font-size: 2rem;
+}
+/*TEXT ARRIVE SITE*/
+
+
+/*HORAIRE MAGASIN*/
+
+
+.horaire-magasin{
+  text-align: center;
+    
+}
+.horaire-magasin ul{
+  color: #95B475;
+  margin-top: 5%;
+  font-size: 1.6rem;
+}
+
+.horaire-magasin li{
+  margin-top: 2%;
+}
+
+/*HORAIRE MAGASIN*/
+
 
 /*CATALOGUE*/
 
@@ -178,13 +209,35 @@ justify-content: center;
 /*FIN CATALOGUE*/
 
 
+.square2{
+  height:   35vh;
+  margin-top: 10%;
+}
 
+.square2 h1{
+  color: #95B475;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.square4{
+  height:   35vh;
+  margin-top: 30%;
+}
+
+.square4 h1{
+  color: #95B475;
+  display: flex;
+  justify-content: center;
+}
 
 /*DEBUT DESIGN CARD EQUIPE*/
 
 .square3{
   height:   65vh;
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
 .square3 h1{
